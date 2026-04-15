@@ -132,7 +132,7 @@ public class GetUser extends BaseTest {
         List<Object> exitedSmallcaseList = JsonPathFinder.getJsPath(response).get("data.exitedSmallcases");
         List<Object> toCheckIfInvested = Stream.concat(investedSmallcaseList.stream(), exitedSmallcaseList.stream()).collect(Collectors.toList());
 
-        if (JsonPathFinder.getJsPath(response).get("data.flags.onboarding.invested"))
+        if ((boolean) JsonPathFinder.getJsPath(response).get("data.flags.onboarding.invested"))
             assertThat(toCheckIfInvested.size()).isGreaterThan(0);
     }
 
