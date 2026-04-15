@@ -1,0 +1,14 @@
+{
+    "sortBy": "popularity",
+    "searchString": "Timeless Asset",
+    "performSearch": true,
+    "includeBlocked": true,
+    "Private": false,
+    "Public": true,
+    "type": "postweek",
+    "buyAmount": "1000.5",
+    "sellAmount": "100",
+    "stocksCount": "5",
+    "variety": "regular",
+    "stocks": "GBES"
+}

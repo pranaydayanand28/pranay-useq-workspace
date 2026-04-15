@@ -1,0 +1,67 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "GetCollectionResponse",
+  "type": "object",
+  "properties": {
+    "success": { "type": "boolean" },
+    "errors": {
+      "oneOf": [
+        { "type": "array", "items": { "type": "string" } },
+        { "type": "null" }
+      ]
+    },
+    "data": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "scid": { "type": "string" },
+          "assetUniverse": { "type": "string" },
+          "info": {
+            "type": "object",
+            "properties": {
+              "tier": {},
+              "name": { "type": "string" },
+              "shortDescription": { "type": "string" },
+              "type": { "type": "string" },
+              "publisher": { "type": "string" }
+            },
+            "additionalProperties": true
+          },
+          "stats": {
+            "type": "object",
+            "properties": {
+              "indexValue": { "type": "number" },
+              "lastCloseIndex": { "type": "number" },
+              "minInvestAmount": { "type": "number" },
+              "ratios": {
+                "type": "object",
+                "properties": {
+                  "cagr": { "type": "number" },
+                  "cagrDuration": { "type": "string" }
+                },
+                "additionalProperties": true
+              }
+            },
+            "additionalProperties": true
+          },
+          "flags": { "type": "object", "additionalProperties": true },
+          "watchlistInfo": { "type": "object", "additionalProperties": true },
+          "distributorMeta": {
+            "type": "array",
+            "items": { "type": "object", "additionalProperties": true }
+          },
+          "brokerMeta": {
+            "type": "array",
+            "items": { "type": "object", "additionalProperties": true }
+          },
+          "trigger": { "type": "object", "additionalProperties": true }
+        },
+        "required": ["scid"],
+        "additionalProperties": true
+      }
+    }
+  },
+  "required": ["success", "data"],
+  "additionalProperties": true
+}

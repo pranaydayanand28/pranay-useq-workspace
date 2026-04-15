@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="smallcase API Suite">
+    <listeners>
+        <listener class-name="resource.resource.ListenerClass"/>
+    </listeners>
+
+    <test name="Running login across brokers to check basic sanity of the build">
+        <groups>
+            <run>
+                <include name="sanity" />
+            </run>
+        </groups>
+        <classes>
+            <class name="com.smallcaseapi.brokerAuthCookies.BrokerAuthCookies"/>
+            <class name="com.smallcaseapi.SmallcaseLoginAPI"/>
+        </classes>
+    </test>
+</suite>

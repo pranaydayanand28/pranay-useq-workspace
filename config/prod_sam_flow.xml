@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="smallcase API Suite">
+    <listeners>
+        <listener class-name="resource.resource.ListenerClass"/>
+    </listeners>
+
+    <test name="Test Runner for  SSO login">
+        <parameter name="PhoneNo" value="${placehold}"/>
+        <parameter name="isInternalParam" value="true"/>
+        <parameter name="Flow" value="Email flow"/>
+        <classes>
+            <class name="com.smallcaseapi.samflow.SSOLogin"/>
+            <class name="com.smallcaseapi.samflow.EmailPhoneNoSamLogin"/>
+        </classes>
+    </test>
+
+    <test name="Test Runner for sam login">
+        <parameter name="PhoneNo" value="${placehold}"/>
+        <parameter name="isInternalParam" value="true"/>
+        <parameter name="Flow" value="New Sam Login"/>
+        <classes>
+            <class name="com.smallcaseapi.samflow.SamLogin"/>
+        </classes>
+    </test>
+
+
+
+
+</suite>

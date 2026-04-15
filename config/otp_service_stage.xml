@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="otp service suite">
+    <listeners>
+        <listener class-name="resource.resource.ListenerClass"/>
+    </listeners>
+
+    <test name="Test Runner for OTP verification">
+        <classes>
+            <class name="com.otpservice.otpVerification.PhoneVerification"/>
+            <class name="com.otpservice.otpVerification.EmailVerification"/>
+        </classes>
+    </test>
+
+    <test name="Test Runner for OTP service JWE token auth apis">
+        <parameter name="flow" value="JWE Token Flow"/>
+        <classes>
+            <class name="com.otpservice.otpVerification.JweTokenAuth"/>
+        </classes>
+    </test>
+
+    <test name="Test Runner for OTP service Client apis">
+        <parameter name="Flow" value="Otp Client check"/>
+        <classes>
+            <class name="com.otpservice.CreateClient"/>
+            <class name="com.otpservice.DeleteClient"/>
+            <class name="com.otpservice.UpdateClient"/>
+            <class name="com.otpservice.GetClient"/>
+            <class name="com.otpservice.GetClientConfig"/>
+        </classes>
+    </test>
+
+    <test name="Test Runner for OTP service auth apis">
+        <parameter name="Flow" value="Sms template check"/>
+        <classes>
+            <class name="com.otpservice.Auth"/>
+        </classes>
+    </test>
+</suite>

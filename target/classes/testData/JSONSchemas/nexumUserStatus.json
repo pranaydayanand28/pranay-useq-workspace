@@ -1,0 +1,44 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "success": {
+      "type": "boolean"
+    },
+    "errors": {
+      "type": "null"
+    },
+    "data": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "creditLimit": {
+          "type": "integer"
+        },
+        "flags": {
+          "type": "object",
+          "properties": {
+            "isFinalCreditLimit": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "isFinalCreditLimit"
+          ]
+        }
+      },
+      "required": [
+        "status",
+        "creditLimit",
+        "flags"
+      ]
+    }
+  },
+  "required": [
+    "success",
+    "errors",
+    "data"
+  ]
+}

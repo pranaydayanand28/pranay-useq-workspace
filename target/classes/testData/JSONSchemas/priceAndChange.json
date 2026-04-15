@@ -1,0 +1,69 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "$ref": "#/definitions/Welcome6",
+  "definitions": {
+    "Welcome6": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "success": {
+          "type": "boolean"
+        },
+        "errors": {
+          "type": "null"
+        },
+        "data": {
+          "$ref": "#/definitions/Data"
+        }
+      },
+      "required": [
+        "data",
+        "errors",
+        "success"
+      ],
+      "title": "Welcome6"
+    },
+    "Data": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "value":{"type":"string"}
+      },
+      "title": "Data"
+    },
+    "FirstObject": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "price": {
+          "type": "number"
+        },
+        "close": {
+          "type": "number"
+        },
+        "change": {
+          "type": "string"
+        },
+        "high": {
+          "type": "number"
+        },
+        "low": {
+          "type": "number"
+        },
+        "date": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "change",
+        "close",
+        "date",
+        "high",
+        "low",
+        "price"
+      ],
+      "title": "FirstObject"
+    }
+  }
+}

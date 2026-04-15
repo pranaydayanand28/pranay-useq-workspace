@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="smallcase API Suite">
+    <listeners>
+        <listener class-name="resource.resource.CommonListener"/>
+    </listeners>
+
+    <test name="SAM BAM Connect">
+        <classes>
+            <class name="com.samBamConnect.SamBamConnect">
+                <methods>
+                    <include name="newSamBamConnect"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>

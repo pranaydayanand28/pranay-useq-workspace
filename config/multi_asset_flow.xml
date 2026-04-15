@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="smallcase API Suite">
+
+    <listeners>
+        <listener class-name="resource.resource.ListenerClass"/>
+    </listeners>
+
+    <test name="Test Runner for SAM Login">
+        <parameter name="PhoneNo" value="9739110154"/>
+        <parameter name="isInternalParam" value="false"/>
+        <parameter name="Flow" value="SamLogin"/>
+        <classes>
+            <class name="com.smallcaseapi.samflow.SamLogin"/>
+        </classes>
+    </test>
+
+    <test name="Test Runner for Multi-Asset Watchlist Flow">
+        <parameter name="PhoneNo" value="9739110154"/>
+        <parameter name="Flow" value="MultiAssetWatchlist"/>
+        <classes>
+            <class name="com.smallcaseapi.samflow.multiassetwatchlist.AddWatchtlist"/>
+            <class name="com.smallcaseapi.samflow.multiassetwatchlist.GetMeta"/>
+            <class name="com.smallcaseapi.samflow.multiassetwatchlist.GetWatchlist"/>
+            <class name="com.smallcaseapi.samflow.multiassetwatchlist.RemoveWatchlist"/>
+        </classes>
+    </test>
+
+    <test name="Test Runner for Multi-Asset-Collection smallboard Flow">
+        <parameter name="Flow" value="MultiAssetCollection"/>
+        <classes>
+            <class name="com.smallboard.multiassetcollection.CreateAssetList"/>
+            <class name="com.smallboard.multiassetcollection.GetAssetListById"/>
+            <class name="com.smallboard.multiassetcollection.UpdateAssetList"/>
+            <class name="com.smallboard.multiassetcollection.GetAllAssetList"/>
+            <class name="com.multiassetcollection.experience.MultiAssetCollection"/>
+            <class name="com.smallboard.multiassetcollection.DeleteAssetList"/>
+        </classes>
+    </test>
+</suite>

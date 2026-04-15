@@ -1,0 +1,59 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "success": { "type": "boolean" },
+    "errors": { "type": "array" },
+    "data": {
+      "type": "object",
+      "properties": {
+        "mutualfunds": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "mfId": { "type": "string" },
+              "slug": { "type": "string" },
+              "meta": { "type": "object", "additionalProperties": true }
+            },
+            "required": ["mfId", "slug", "meta"],
+            "additionalProperties": true
+          }
+        },
+        "singleStocks": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "sid": { "type": "string" },
+              "type": { "type": "string" },
+              "slug": { "type": "string" },
+              "info": { "type": "object", "additionalProperties": true }
+            },
+            "required": ["sid", "type", "slug", "info"],
+            "additionalProperties": true
+          }
+        },
+        "smallcases": {
+          "type": "array",
+          "items": { "type": "object", "additionalProperties": true }
+        },
+        "stocks": {
+          "type": "array",
+          "items": { "type": "object", "additionalProperties": true }
+        },
+        "collections": {
+          "type": "array",
+          "items": { "type": "object", "additionalProperties": true }
+        },
+        "publishers": {
+          "type": "array",
+          "items": { "type": "object", "additionalProperties": true }
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "required": ["success", "errors", "data"],
+  "additionalProperties": false
+}

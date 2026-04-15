@@ -1,0 +1,90 @@
+package com.smallcase.resource;
+
+public class SmallcaseResource {
+
+    public static String brokerLogIn = "/auth/BrokerLogin";
+    public static String getRequestToken = "/auth/GetRequestToken";
+    public static String smallcaseLogin = "/auth/smallcase";
+    public static String dashboard = "/smallcases/dashboard";
+    public static String notification = "/user/sc/notifications";
+    public static String checkStatus = "/market/checkStatus";
+    public static String offers = "/user/sc/offers/active";
+    public static String investmentInsight = "/user/sc/investmentInsights";
+    public static String blogProxy = "/smallcases/blogProxy";
+    public static String priceandchange = "/market/priceandchange";
+    public static String getUser = "/user/sc/getUser";
+    public static String collection = "/smallcases/collections";
+    public static String getCollection = "/smallcases/collections/getCollection";
+    public static String discover = "/smallcases/discover";
+    public static String search = "/smallcases/search";
+    public static String addWatchlist = "/user/sc/watchlist/add";
+    public static String getWatchlist = "/user/sc/watchlist";
+    public static String removeWatchlist = "/user/sc/watchlist/remove";
+    public static String funds = "/user/sc/funds";
+    public static String logout = "/auth/logout";
+    public static String SmallcaseScid = "/smallcases/smallcase";
+    public static String samScid = "/sam/smallcases";
+    public static String placeOrder = "/user/sc/placeOrders";
+    public static String statusBatch = "/user/sc/orders/status";
+    public static String fixBatch = "user/sc/fixBatch";
+    public static String cancelBatch = "user/sc/cancelBatch";
+    public static String orderIscid = "/user/sc/orders";
+    public static String manageSip = "/user/sc/actions/sip/manage";
+    public static String endSip = "/user/sc/actions/sip/end";
+    public static String userSipAction = "/user/sc/actions/sip/get";
+    public static String startSIP = "/user/sc/actions/sip/create";
+    public static String stockInfo = "/market/stocks/info";
+    public static String draftSave = "/user/sc/drafts/save";
+    public static String getDraftDetail = "/user/sc/drafts/draft";
+    public static String getDrafts = "/user/sc/drafts";
+    public static String highlighted = "/smallcases/highlighted";
+    public static String clientType = "web";
+    public static String varietyType = "regular";
+    public static String sipAmount = "5000";
+    public static String frequency = "1m";
+    public static String manageSipAm = "8000";
+    public static String getLeprechaun = "/v1/internal/automation/leprechaun/user/create";
+    public static String publishername = "wright-research";
+    public static String secureAuth = "/auth/token";
+    public static String triggerOtp = "/auth/otp";
+    public static String verifyOtp = "/auth/verify";
+    public static String verificationStatus = "/auth/details";
+    public static String samLogin = "/sam/auth/login";
+    public static String pushRebalance = "/api/support/user/actions/rebalance/push";
+    public static String brokercheckSession = "/api/v1/user/checkSession";
+
+    public static String invScore = "/sam/portfolio";
+    public static String scorePendingAction = "/sam/portfolio/pending/action?action=SIP";
+    public static String breakdown = "/sam/portfolio/breakdown";
+    public static String trackTriggerOtp = "/sam/holdings/auth/otp";
+    public static String trackverifyOtp = "/sam/holdings/auth/verify";
+    public static String lspConsent = "sam/user/consent";
+    public static String nexumConnectToken = "sam/auth/connectToken?type=LSP";
+    public static String nexumLogin = "/auth/login";
+    public static String nexumUserStatus = "/user/status";
+    public static String nexumUserCredit = "/user/credit/simulation";
+    public static String nexumUserIntraction = "/user/interaction";
+    public static String importStatus = "/sam/holdings/import/status?mockMF=true";
+    public static String nexumUserHolding = "/user/holdings?type=json";
+    public static String nexumUserloanpdf = "/loan/transactions?type=pdf";
+    public static String loanSummary = "/loan/summary";
+    public static String ssoSignin = "/sam/auth/sso/signin";
+    public static String phoneTestuser = "/internal/admin/testaccount";
+    public static String AddWatchlistv2 = "/sam/v2/watchlist";
+    public static String GetMeta = "/sam/user/meta";
+    public static String GetWatchlistV2 = "/sam/v2/watchlist";
+    public static String RemoveWatchlistV2 = "/sam/v2/watchlist";
+
+    public static String transaction = "/user/sc/transaction";
+    public static String connect = "/sam/auth/connect";
+    public static String checkSession = "/sam/auth/checkSession";
+
+//Gateway resources and Gateway redirection resources
+    public static String sdkToken = "/auth/gateway/sdkToken";
+    public static String initSession = "/gateway/smallcase-website/initSession";
+    public static String gatewayIntent = "/user/sc/gateway/intent";
+    public static String gatewayTransaction = "/gateway/smallcase-website/transaction";
+    public static String gatewayConnect = "/auth/gateway/connect";
+    public static String gatewaySessionRefresh = "/auth/gateway/refreshSession";
+    public static String amoActiveHours = "/api/v1/misc/amoActiveHours";
+}

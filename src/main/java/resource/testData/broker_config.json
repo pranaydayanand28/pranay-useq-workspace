@@ -1,0 +1,116 @@
+[
+  {
+    "Broker Name": "Angel Broking",
+    "amoAllowed": false,
+    "liveHoldingsProvided": true,
+    "AMO Window": "N/A"
+  },
+  {
+    "Broker Name": "SBI",
+    "amoAllowed": true,
+    "liveHoldingsProvided": false,
+    "AMO Window": "7:00 PM - 8:59 AM; 9:07 AM - 9:14 AM"
+  },
+  {
+    "Broker Name": "Groww",
+    "amoAllowed": true,
+    "liveHoldingsProvided": true,
+    "AMO Window": "4:01 PM - 9:00 AM; 4:01 PM - 12:00 AM; 5:00 AM - 8:58 AM"
+  },
+  {
+    "Broker Name": "Kotak",
+    "amoAllowed": true,
+    "liveHoldingsProvided": true,
+    "AMO Window": "3:30 PM - 8:57 AM"
+  },
+  {
+    "Broker Name": "SMC",
+    "amoAllowed": true,
+    "liveHoldingsProvided": true,
+    "AMO Window": "6:00 PM - 5:30 AM"
+  },
+  {
+    "Broker Name": "IIFL",
+    "amoAllowed": false,
+    "liveHoldingsProvided": true,
+    "AMO Window": "N/A"
+  },
+  {
+    "Broker Name": "HDFC",
+    "amoAllowed": true,
+    "liveHoldingsProvided": false,
+    "AMO Window": "6:30 PM - 9:00 AM; 6:30 PM - 12:00 AM; 1:00 AM - 9:00 AM"
+  },
+  {
+    "Broker Name": "Axis",
+    "amoAllowed": true,
+    "liveHoldingsProvided": false,
+    "AMO Window": "6:15 PM - 9:00 AM"
+  },
+  {
+    "Broker Name": "Kite",
+    "amoAllowed": true,
+    "liveHoldingsProvided": true,
+    "AMO Window": "3:45 PM - 1:00 AM (PoA); 5:00 PM - 1:00 AM (Non-PoA); 5:00 AM - 9:00 AM"
+  },
+  {
+    "Broker Name": "Dhan",
+    "amoAllowed": true,
+    "liveHoldingsProvided": true,
+    "AMO Window": "4:30 PM - 9:00 AM"
+  },
+  {
+    "Broker Name": "FundzBazar",
+    "amoAllowed": false,
+    "liveHoldingsProvided": false,
+    "AMO Window": "N/A"
+  },
+  {
+    "Broker Name": "Alice Blue",
+    "amoAllowed": false,
+    "liveHoldingsProvided": false,
+    "AMO Window": "N/A"
+  },
+  {
+    "Broker Name": "Five Paisa",
+    "amoAllowed": false,
+    "liveHoldingsProvided": true,
+    "AMO Window": "N/A"
+  },
+  {
+    "Broker Name": "Upstox",
+    "amoAllowed": true,
+    "liveHoldingsProvided": true,
+    "AMO Window": "4:01 PM - 9:00 AM; 4:01 PM - 12:00 AM; 5:00 AM - 8:58 AM"
+  },
+  {
+    "Broker Name": "Trustline",
+    "amoAllowed": false,
+    "liveHoldingsProvided": true,
+    "AMO Window": "N/A"
+  },
+  {
+    "Broker Name": "Motilal Oswal",
+    "amoAllowed": false,
+    "liveHoldingsProvided": true,
+    "AMO Window": "N/A"
+  },
+  {
+    "Broker Name": "ICICI",
+    "amoAllowed": true,
+    "liveHoldingsProvided": false,
+    "AMO Window": "5:00 PM - 8:55 AM"
+  },
+  {
+    "Broker Name": "Fisdom",
+    "amoAllowed": true,
+    "liveHoldingsProvided": true,
+    "AMO Window": "3:45 PM - 8:59 AM"
+  },
+  {
+    "Broker Name": "Edelweiss",
+    "amoAllowed": false,
+    "liveHoldingsProvided": false,
+    "AMO Window": "N/A"
+  }
+]

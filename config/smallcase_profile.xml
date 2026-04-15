@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="SmallcaseProfileAPI_TestSuite">
+
+    <listeners>
+        <listener class-name="resource.resource.ListenerClass" />
+    </listeners>
+
+    <!-- Test for Sam Login and Smallcase Profile API (Login View) -->
+    <test name="Test Runner for Smallcase Profile API Login view">
+<!--        <parameter name="PhoneNo" value="9739110154" />-->
+<!--        <parameter name="isInternalParam" value="false" />-->
+<!--        <parameter name="Flow" value="Smallcase Platform - Login View" />-->
+
+        <parameter name="PhoneNo" value="${placehold}"/>
+        <parameter name="isInternalParam" value="true"/>
+        <parameter name="Flow" value="Smallcase Platform - Login View" />
+
+        <classes>
+            <class name="com.smallcaseapi.samflow.SamLogin" />
+            <class name="com.smallcaseapi.SmallcaseProfileAPI">
+                <methods>
+                    <include name="samSmallcaseLoginView" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- Initialization step (Runs only for broker login) -->
+    <test name="Test Runner for Broker Login (Kite)">
+
+        <classes>
+            <class name="com.smallcaseapi.brokerAuthCookies.BrokerAuthCookies" />
+            <class name="com.smallcaseapi.SmallcaseLoginAPI" />
+        </classes>
+    </test>
+
+    <!-- Broker Login Tests (Kite) -->
+    <test name="Test Runner for Kite">
+        <parameter name="Flow" value="Broker Platform - Login View" />
+        <parameter name="broker" value="kite" />
+
+        <classes>
+            <class name="com.smallcaseapi.SmallcaseProfileAPI">
+                <methods>
+                    <include name="brokerSmallcaseLoginView" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+<!--    &lt;!&ndash; Broker Login Tests (HDFC) &ndash;&gt;-->
+<!--    <test name="Test Runner for HDFC">-->
+<!--        <parameter name="Flow" value="Broker Platform - Login View" />-->
+<!--        <parameter name="broker" value="hdfc" />-->
+
+<!--        <classes>-->
+<!--            <class name="com.smallcaseapi.SmallcaseProfileAPI">-->
+<!--                <methods>-->
+<!--                    <include name="brokerSmallcaseLoginView" />-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--        </classes>-->
+<!--    </test>-->
+
+    <!-- Test for Smallcase Profile API (Logout View) -->
+    <test name="Test Runner for Smallcase Profile API Logout view">
+        <parameter name="Flow" value="Smallcase/Broker Platform - Logout View" />
+
+        <classes>
+            <class name="com.smallcaseapi.SmallcaseProfileAPI">
+                <methods>
+                    <include name="samSmallcaseLogoutView" />
+                    <include name="brokerSmallcaseLogoutView" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>

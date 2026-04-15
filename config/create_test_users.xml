@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="OTP Service Suite">
+    <listeners>
+        <listener class-name="resource.resource.ListenerClass"/>
+    </listeners>
+
+    <test name="Test Runner to Create Test Users">
+        <parameter name="flow" value="CreateTestUsers" />
+        <parameter name="phoneUsers" value="1" />
+        <parameter name="emailUsers" value="1" />
+        <classes>
+            <class name="com.otpservice.PhoneTestUser" />
+            <class name="com.otpservice.EmailTestUser" />
+        </classes>
+    </test>
+
+</suite>

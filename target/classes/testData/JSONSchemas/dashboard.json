@@ -1,0 +1,148 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Broker-Agnostic Smallcase Schema",
+  "type": "object",
+  "properties": {
+    "success": { "type": "boolean" },
+    "errors": { "type": ["null", "array", "string"] },
+    "data": {
+      "type": "object",
+      "properties": {
+        "highlighted": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "_id": { "type": ["string", "null"] },
+              "scid": { "type": ["string", "null"] },
+              "info": {
+                "type": "object",
+                "properties": {
+                  "name": { "type": ["string", "null"] },
+                  "nameAttributes": {
+                    "type": "object",
+                    "properties": {
+                      "baseName": { "type": ["string", "null"] },
+                      "displayName": { "type": ["string", "null"] },
+                      "createdAt": { "type": ["string", "null"], "format": "date-time" },
+                      "updatedAt": { "type": ["string", "null"], "format": "date-time" }
+                    }
+                  },
+                  "type": { "type": ["string", "null"] },
+                  "created": { "type": ["string", "null"], "format": "date-time" },
+                  "uploaded": { "type": ["string", "null"], "format": "date-time" },
+                  "updated": { "type": ["string", "null"], "format": "date-time" },
+                  "nextUpdate": { "type": ["string", "null"], "format": "date-time" },
+                  "broker": { "type": ["string", "null"] },
+                  "brokerName": { "type": ["string", "null"] },
+                  "creator": { "type": ["string", "null"] },
+                  "owner": {
+                    "type": "object",
+                    "properties": {
+                      "userId": { "type": ["string", "null"] },
+                      "name": { "type": ["string", "null"] }
+                    }
+                  },
+                  "shortDescription": { "type": ["string", "null"] },
+                  "tags": { "type": "array", "items": { "type": "string" } },
+                  "rebalanceSchedule": { "type": ["string", "null"] },
+                  "tier": { "type": ["string", "null"] },
+                  "investmentStrategy": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "key": { "type": ["string", "null"] },
+                        "displayName": { "type": ["string", "null"] }
+                      }
+                    }
+                  },
+                  "investmentHorizon": { "type": ["string", "null"] },
+                  "profileVideo": {
+                    "type": "object",
+                    "properties": {
+                      "thumbnail": { "type": ["string", "null"] },
+                      "url": { "type": ["string", "null"] },
+                      "provider": { "type": ["string", "null"] },
+                      "providerVideoId": { "type": ["string", "null"] }
+                    }
+                  },
+                  "slug": { "type": ["string", "null"] },
+                  "publishedOnDate": { "type": ["string", "null"], "format": "date-time" },
+                  "micrositeUrl": { "type": ["string", "null"], "format": "uri" },
+                  "constituentSharesAdjusted": { "type": ["boolean", "null"] },
+                  "lastRebalanced": { "type": ["string", "null"], "format": "date-time" }
+                }
+              },
+              "stats": {
+                "type": "object",
+                "properties": {
+                  "returns": {
+                    "type": "object",
+                    "additionalProperties": { "type": ["number", "string", "null"] }
+                  },
+                  "ratios": {
+                    "type": "object",
+                    "additionalProperties": true
+                  },
+                  "indexValue": { "type": ["number", "string", "null"] },
+                  "launchDateIndex": { "type": ["number", "string", "null"] },
+                  "divReturns": { "type": ["number", "string", "null"] },
+                  "minInvestAmount": { "type": ["number", "string", "null"] },
+                  "minSipAmount": { "type": ["number", "string", "null"] },
+                  "investorCount": { "type": ["number", "string", "null"] },
+                  "subscriberCount": { "type": ["number", "string", "null"] },
+                  "lastIndexUpdatedDate": { "type": ["string", "null"], "format": "date-time" }
+                }
+              },
+              "flags": {
+                "type": "object",
+                "properties": {
+                  "popular": {
+                    "type": "object",
+                    "properties": {
+                      "value": { "type": ["boolean", "null"] },
+                      "rank": { "type": ["number", "null"] }
+                    }
+                  },
+                  "highlighted": {
+                    "type": "object",
+                    "properties": {
+                      "value": { "type": ["boolean", "null"] },
+                      "rank": { "type": ["number", "null"] },
+                      "label": { "type": ["string", "null"] },
+                      "description": { "type": ["string", "null"] }
+                    }
+                  }
+                }
+              },
+              "platformData": {
+                "type": "object",
+                "properties": {
+                  "ratios": { "type": "object", "additionalProperties": true },
+                  "flags": { "type": "object", "additionalProperties": true },
+                  "defaultGraphDuration": { "type": ["string", "null"] }
+                }
+              }
+            }
+          }
+        },
+        "messages": { "type": "array" },
+        "blogs": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "image": { "type": ["string", "null"] },
+              "altText": { "type": ["string", "null"] },
+              "title": { "type": ["string", "null"] },
+              "subtitle": { "type": ["string", "null"] },
+              "link": { "type": ["string", "null"], "format": "uri" }
+            }
+          }
+        }
+      }
+    }
+  },
+  "required": ["success", "data"]
+}

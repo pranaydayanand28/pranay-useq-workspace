@@ -1,0 +1,19 @@
+{
+  "sid1": "SUZL",
+  "shares1": 7.575757575757576,
+  "locked1": false,
+  "weight1": 0.5,
+  "sidInfo.name1": "Suzlon Energy Ltd",
+  "sidInfo.sector1": "Renewable Energy Equipment & Services",
+  "sidInfo.ticker1": "SUZLON",
+  "sid2": "URJA",
+  "shares2": 3.875968992248062,
+  "locked2": false,
+  "weight2": 0.5,
+  "sidInfo.name2": "Urja Global Ltd",
+  "sidInfo.sector2": "Renewable Energy Equipment & Services",
+  "sidInfo.ticker2": "URJA",
+  "Name" : "Draft Test smallcase",
+  "Description" : "This smallcase is created to test the created smallcase flow"
+}
+

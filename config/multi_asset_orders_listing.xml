@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="smallcase API Suite">
+    <listeners>
+        <listener class-name="resource.resource.CommonListener"/>
+    </listeners>
+
+    <test name="Sam Login before running empty order history tests">
+        <parameter name="PhoneNo" value="9839180459"/>
+        <parameter name="isInternalParam" value="false"/>
+        <parameter name="Flow" value="Multi asset orders listing for empty order history"/>
+        <classes>
+            <class name="com.smallcaseapi.samflow.SamLogin"/>
+        </classes>
+    </test>
+    <test name="Multi asset orders listing for empty order history for Mutual Funds">
+        <parameter name="assetType" value="mutualFund"/>
+        <classes>
+            <class name="com.multiassetorderlisting.GroupOrdersListingAPI">
+                <methods>
+                    <include name="VerifyGroupOrdersListingForUserWithoutOrders"/>
+                </methods>
+            </class>
+            <class name="com.multiassetorderlisting.OrdersListingAPI">
+                <methods>
+                    <include name="VerifyOrdersListingForUserWithoutOrders"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Multi asset orders listing for empty order history for Stocks">
+        <parameter name="assetType" value="stock"/>
+        <classes>
+            <class name="com.multiassetorderlisting.GroupOrdersListingAPI">
+                <methods>
+                    <include name="VerifyGroupOrdersListingForUserWithoutOrders"/>
+                </methods>
+            </class>
+            <class name="com.multiassetorderlisting.OrdersListingAPI">
+                <methods>
+                    <include name="VerifyOrdersListingForUserWithoutOrders"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Sam Login before running Multi asset orders listing tests">
+        <parameter name="PhoneNo" value="9739110154"/>
+        <parameter name="isInternalParam" value="false"/>
+        <parameter name="Flow" value="Multi asset orders listing"/>
+        <classes>
+            <class name="com.smallcaseapi.samflow.SamLogin"/>
+        </classes>
+    </test>
+    <test name="Multi asset orders listing for Mutual Funds">
+        <parameter name="assetType" value="mutualFund"/>
+        <classes>
+            <class name="com.multiassetorderlisting.GroupOrdersListingAPI">
+                <methods>
+                    <exclude name="VerifyGroupOrdersListingForUserWithoutOrders"/>
+                </methods>
+            </class>
+            <class name="com.multiassetorderlisting.OrdersListingAPI">
+                <methods>
+                    <exclude name="VerifyOrdersListingForUserWithoutOrders"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Multi asset orders listing for Stocks">
+        <parameter name="assetType" value="stock"/>
+        <classes>
+            <class name="com.multiassetorderlisting.GroupOrdersListingAPI">
+                <methods>
+                    <exclude name="VerifyGroupOrdersListingForUserWithoutOrders"/>
+                </methods>
+            </class>
+            <class name="com.multiassetorderlisting.OrdersListingAPI">
+                <methods>
+                    <exclude name="VerifyOrdersListingForUserWithoutOrders"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

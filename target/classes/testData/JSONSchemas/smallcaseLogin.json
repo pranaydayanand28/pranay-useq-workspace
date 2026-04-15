@@ -1,0 +1,70 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "$ref": "#/definitions/Welcome9",
+  "definitions": {
+    "Welcome9": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "success": {
+          "type": "boolean"
+        },
+        "errors": {
+          "type": "null"
+        },
+        "data": {
+          "$ref": "#/definitions/Data"
+        }
+      },
+      "required": [
+        "data",
+        "errors",
+        "success"
+      ],
+      "title": "Welcome9"
+    },
+    "Data": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "message": {
+          "type": "string",
+          "value": "Cookie set on api.smallcase.com"
+        },
+        "x-csrf-token": {
+          "type": "string"
+        },
+        "jwt": {
+          "type": "string"
+        },
+        "broker": {
+          "type": "string"
+        },
+        "flags": {
+          "$ref": "#/definitions/Flags"
+        }
+      },
+      "required": [
+        "broker",
+        "flags",
+        "jwt",
+        "message",
+        "x-csrf-token"
+      ],
+      "title": "Data"
+    },
+    "Flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "signup": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "signup"
+      ],
+      "title": "Flags"
+    }
+  }
+}

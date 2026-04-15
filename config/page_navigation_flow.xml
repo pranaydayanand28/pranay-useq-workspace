@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="smallcase API Suite">
+    <listeners>
+        <listener class-name="resource.resource.ListenerClass"/>
+    </listeners>
+
+    <test name="Login Test Runner - initialization of suite">
+        <classes>
+            <class name="com.smallcaseapi.brokerAuthCookies.BrokerAuthCookies"/>
+            <class name="com.smallcaseapi.SmallcaseLoginAPI"/>
+        </classes>
+    </test>
+
+    <test name="Test Runner for Kite">
+        <parameter name="broker" value="kite"/>
+        <classes>
+            <class name="com.smallcaseapi.DashboardAPI"/>
+            <class name="com.smallcaseapi.Highlighted"/>
+            <class name="com.smallcaseapi.DiscoverAPI"/>
+            <class name="com.smallcaseapi.Search"/>
+            <class name="com.smallcaseapi.CollectionAPI"/>
+            <class name="com.smallcaseapi.GetCollection"/>
+            <class name="com.smallcaseapi.CheckStatusAPI"/>
+            <class name="com.smallcaseapi.BlogProxyAPI"/>
+            <class name="com.smallcaseapi.AddToWatchlistAPI"/>
+            <class name="com.smallcaseapi.GetWatchlistAPI"/>
+            <class name="com.smallcaseapi.RemoveWatchlist"/>
+            <class name="com.smallcaseapi.GetUser"/>
+            <class name="com.smallcaseapi.InvestmentInsightAPI"/>
+            <class name="com.smallcaseapi.NotificationAPI"/>
+            <class name="com.smallcaseapi.OfferAPI"/>
+            <class name="com.smallcaseapi.PriceandChangeAPI"/>
+            <class name="com.smallcaseapi.FundsAPI"/>
+            <class name="com.smallcaseapi.createsc.DraftSaveAPI"/>
+            <class name="com.smallcaseapi.createsc.GetDraftDetail"/>
+            <class name="com.smallcaseapi.createsc.GetDrafts"/>
+        </classes>
+    </test>
+
+    <test name="Test Runner for HDFC">
+        <parameter name="broker" value="hdfc"/>
+        <classes>
+            <class name="com.smallcaseapi.DashboardAPI"/>
+            <class name="com.smallcaseapi.Highlighted"/>
+            <class name="com.smallcaseapi.DiscoverAPI"/>
+            <class name="com.smallcaseapi.Search"/>
+            <class name="com.smallcaseapi.CollectionAPI"/>
+            <class name="com.smallcaseapi.GetCollection"/>
+            <class name="com.smallcaseapi.CheckStatusAPI"/>
+            <class name="com.smallcaseapi.BlogProxyAPI"/>
+            <class name="com.smallcaseapi.AddToWatchlistAPI"/>
+            <class name="com.smallcaseapi.GetWatchlistAPI"/>
+            <class name="com.smallcaseapi.RemoveWatchlist"/>
+            <class name="com.smallcaseapi.GetUser"/>
+            <class name="com.smallcaseapi.InvestmentInsightAPI"/>
+            <class name="com.smallcaseapi.NotificationAPI"/>
+            <class name="com.smallcaseapi.OfferAPI"/>
+            <class name="com.smallcaseapi.PriceandChangeAPI"/>
+            <class name="com.smallcaseapi.FundsAPI"/>
+            <class name="com.smallcaseapi.createsc.DraftSaveAPI"/>
+            <class name="com.smallcaseapi.createsc.GetDraftDetail"/>
+            <class name="com.smallcaseapi.createsc.GetDrafts"/>
+        </classes>
+    </test>
+
+    <test name="Test Runner for Axis">
+        <parameter name="broker" value="axis"/>
+        <classes>
+            <class name="com.smallcaseapi.DashboardAPI"/>
+            <class name="com.smallcaseapi.Highlighted"/>
+            <class name="com.smallcaseapi.DiscoverAPI"/>
+            <class name="com.smallcaseapi.Search"/>
+            <class name="com.smallcaseapi.CollectionAPI"/>
+            <class name="com.smallcaseapi.GetCollection"/>
+            <class name="com.smallcaseapi.CheckStatusAPI"/>
+            <class name="com.smallcaseapi.BlogProxyAPI"/>
+            <class name="com.smallcaseapi.AddToWatchlistAPI"/>
+            <class name="com.smallcaseapi.GetWatchlistAPI"/>
+            <class name="com.smallcaseapi.RemoveWatchlist"/>
+            <class name="com.smallcaseapi.GetUser"/>
+            <class name="com.smallcaseapi.InvestmentInsightAPI"/>
+            <class name="com.smallcaseapi.NotificationAPI"/>
+            <class name="com.smallcaseapi.OfferAPI"/>
+            <class name="com.smallcaseapi.PriceandChangeAPI"/>
+            <class name="com.smallcaseapi.FundsAPI"/>
+            <class name="com.smallcaseapi.createsc.DraftSaveAPI"/>
+            <class name="com.smallcaseapi.createsc.GetDraftDetail"/>
+            <class name="com.smallcaseapi.createsc.GetDrafts"/>
+        </classes>
+    </test>
+
+    <test name="Test Runner for fivepaisa">
+        <parameter name="broker" value="fivepaisa"/>
+        <classes>
+            <class name="com.smallcaseapi.DashboardAPI"/>
+            <class name="com.smallcaseapi.Highlighted"/>
+            <class name="com.smallcaseapi.DiscoverAPI"/>
+            <class name="com.smallcaseapi.Search"/>
+            <class name="com.smallcaseapi.CollectionAPI"/>
+            <class name="com.smallcaseapi.GetCollection"/>
+            <class name="com.smallcaseapi.CheckStatusAPI"/>
+            <class name="com.smallcaseapi.BlogProxyAPI"/>
+            <class name="com.smallcaseapi.AddToWatchlistAPI"/>
+            <class name="com.smallcaseapi.GetWatchlistAPI"/>
+            <class name="com.smallcaseapi.RemoveWatchlist"/>
+            <class name="com.smallcaseapi.GetUser"/>
+            <class name="com.smallcaseapi.InvestmentInsightAPI"/>
+            <class name="com.smallcaseapi.NotificationAPI"/>
+            <class name="com.smallcaseapi.OfferAPI"/>
+            <class name="com.smallcaseapi.PriceandChangeAPI"/>
+            <class name="com.smallcaseapi.FundsAPI"/>
+            <class name="com.smallcaseapi.createsc.DraftSaveAPI"/>
+            <class name="com.smallcaseapi.createsc.GetDraftDetail"/>
+            <class name="com.smallcaseapi.createsc.GetDrafts"/>
+        </classes>
+    </test>
+
+    <test name="Test Runner for IIFL">
+        <parameter name="broker" value="iifl"/>
+        <classes>
+            <class name="com.smallcaseapi.DashboardAPI"/>
+            <class name="com.smallcaseapi.Highlighted"/>
+            <class name="com.smallcaseapi.DiscoverAPI"/>
+            <class name="com.smallcaseapi.Search"/>
+            <class name="com.smallcaseapi.CollectionAPI"/>
+            <class name="com.smallcaseapi.GetCollection"/>
+            <class name="com.smallcaseapi.CheckStatusAPI"/>
+            <class name="com.smallcaseapi.BlogProxyAPI"/>
+            <class name="com.smallcaseapi.AddToWatchlistAPI"/>
+            <class name="com.smallcaseapi.GetWatchlistAPI"/>
+            <class name="com.smallcaseapi.RemoveWatchlist"/>
+            <class name="com.smallcaseapi.GetUser"/>
+            <class name="com.smallcaseapi.InvestmentInsightAPI"/>
+            <class name="com.smallcaseapi.NotificationAPI"/>
+            <class name="com.smallcaseapi.OfferAPI"/>
+            <class name="com.smallcaseapi.PriceandChangeAPI"/>
+            <class name="com.smallcaseapi.FundsAPI"/>
+            <class name="com.smallcaseapi.createsc.DraftSaveAPI"/>
+            <class name="com.smallcaseapi.createsc.GetDraftDetail"/>
+            <class name="com.smallcaseapi.createsc.GetDrafts"/>
+        </classes>
+    </test>
+
+    <test name="Test Runner for upstox">
+        <parameter name="broker" value="upstox"/>
+        <classes>
+            <class name="com.smallcaseapi.DashboardAPI"/>
+            <class name="com.smallcaseapi.Highlighted"/>
+            <class name="com.smallcaseapi.DiscoverAPI"/>
+            <class name="com.smallcaseapi.Search"/>
+            <class name="com.smallcaseapi.CollectionAPI"/>
+            <class name="com.smallcaseapi.GetCollection"/>
+            <class name="com.smallcaseapi.CheckStatusAPI"/>
+            <class name="com.smallcaseapi.BlogProxyAPI"/>
+            <class name="com.smallcaseapi.AddToWatchlistAPI"/>
+            <class name="com.smallcaseapi.GetWatchlistAPI"/>
+            <class name="com.smallcaseapi.RemoveWatchlist"/>
+            <class name="com.smallcaseapi.GetUser"/>
+            <class name="com.smallcaseapi.InvestmentInsightAPI"/>
+            <class name="com.smallcaseapi.NotificationAPI"/>
+            <class name="com.smallcaseapi.OfferAPI"/>
+            <class name="com.smallcaseapi.PriceandChangeAPI"/>
+            <class name="com.smallcaseapi.FundsAPI"/>
+            <class name="com.smallcaseapi.createsc.DraftSaveAPI"/>
+            <class name="com.smallcaseapi.createsc.GetDraftDetail"/>
+            <class name="com.smallcaseapi.createsc.GetDrafts"/>
+        </classes>
+    </test>
+
+    <test name="Test Runner for motilal">
+        <parameter name="broker" value="motilal"/>
+        <classes>
+            <class name="com.smallcaseapi.DashboardAPI"/>
+            <class name="com.smallcaseapi.Highlighted"/>
+            <class name="com.smallcaseapi.DiscoverAPI"/>
+            <class name="com.smallcaseapi.Search"/>
+            <class name="com.smallcaseapi.CollectionAPI"/>
+            <class name="com.smallcaseapi.GetCollection"/>
+            <class name="com.smallcaseapi.CheckStatusAPI"/>
+            <class name="com.smallcaseapi.BlogProxyAPI"/>
+            <class name="com.smallcaseapi.AddToWatchlistAPI"/>
+            <class name="com.smallcaseapi.GetWatchlistAPI"/>
+            <class name="com.smallcaseapi.RemoveWatchlist"/>
+            <class name="com.smallcaseapi.GetUser"/>
+            <class name="com.smallcaseapi.InvestmentInsightAPI"/>
+            <class name="com.smallcaseapi.NotificationAPI"/>
+            <class name="com.smallcaseapi.OfferAPI"/>
+            <class name="com.smallcaseapi.PriceandChangeAPI"/>
+            <class name="com.smallcaseapi.FundsAPI"/>
+            <class name="com.smallcaseapi.createsc.DraftSaveAPI"/>
+            <class name="com.smallcaseapi.createsc.GetDraftDetail"/>
+            <class name="com.smallcaseapi.createsc.GetDrafts"/>
+        </classes>
+    </test>
+
+    <test name="Test Runner for aliceblue">
+        <parameter name="broker" value="aliceblue"/>
+        <classes>
+            <class name="com.smallcaseapi.DashboardAPI"/>
+            <class name="com.smallcaseapi.Highlighted"/>
+            <class name="com.smallcaseapi.DiscoverAPI"/>
+            <class name="com.smallcaseapi.Search"/>
+            <class name="com.smallcaseapi.CollectionAPI"/>
+            <class name="com.smallcaseapi.GetCollection"/>
+            <class name="com.smallcaseapi.CheckStatusAPI"/>
+            <class name="com.smallcaseapi.BlogProxyAPI"/>
+            <class name="com.smallcaseapi.AddToWatchlistAPI"/>
+            <class name="com.smallcaseapi.GetWatchlistAPI"/>
+            <class name="com.smallcaseapi.RemoveWatchlist"/>
+            <class name="com.smallcaseapi.GetUser"/>
+            <class name="com.smallcaseapi.InvestmentInsightAPI"/>
+            <class name="com.smallcaseapi.NotificationAPI"/>
+            <class name="com.smallcaseapi.OfferAPI"/>
+            <class name="com.smallcaseapi.PriceandChangeAPI"/>
+            <class name="com.smallcaseapi.FundsAPI"/>
+            <class name="com.smallcaseapi.createsc.DraftSaveAPI"/>
+            <class name="com.smallcaseapi.createsc.GetDraftDetail"/>
+            <class name="com.smallcaseapi.createsc.GetDrafts"/>
+        </classes>
+    </test>
+
+    <test name="Test Runner for angelbroking">
+        <parameter name="broker" value="angelbroking"/>
+        <classes>
+            <class name="com.smallcaseapi.DashboardAPI"/>
+            <class name="com.smallcaseapi.Highlighted"/>
+            <class name="com.smallcaseapi.DiscoverAPI"/>
+            <class name="com.smallcaseapi.Search"/>
+            <class name="com.smallcaseapi.CollectionAPI"/>
+            <class name="com.smallcaseapi.GetCollection"/>
+            <class name="com.smallcaseapi.CheckStatusAPI"/>
+            <class name="com.smallcaseapi.BlogProxyAPI"/>
+            <class name="com.smallcaseapi.AddToWatchlistAPI"/>
+            <class name="com.smallcaseapi.GetWatchlistAPI"/>
+            <class name="com.smallcaseapi.RemoveWatchlist"/>
+            <class name="com.smallcaseapi.GetUser"/>
+            <class name="com.smallcaseapi.InvestmentInsightAPI"/>
+            <class name="com.smallcaseapi.NotificationAPI"/>
+            <class name="com.smallcaseapi.OfferAPI"/>
+            <class name="com.smallcaseapi.PriceandChangeAPI"/>
+            <class name="com.smallcaseapi.FundsAPI"/>
+            <class name="com.smallcaseapi.createsc.DraftSaveAPI"/>
+            <class name="com.smallcaseapi.createsc.GetDraftDetail"/>
+            <class name="com.smallcaseapi.createsc.GetDrafts"/>
+        </classes>
+    </test>
+
+    <test name="Test Runner for Edelweiss">
+        <parameter name="broker" value="edelweiss"/>
+        <classes>
+            <class name="com.smallcaseapi.DashboardAPI"/>
+            <class name="com.smallcaseapi.Highlighted"/>
+            <class name="com.smallcaseapi.DiscoverAPI"/>
+            <class name="com.smallcaseapi.Search"/>
+            <class name="com.smallcaseapi.CollectionAPI"/>
+            <class name="com.smallcaseapi.GetCollection"/>
+            <class name="com.smallcaseapi.CheckStatusAPI"/>
+            <class name="com.smallcaseapi.BlogProxyAPI"/>
+            <class name="com.smallcaseapi.AddToWatchlistAPI"/>
+            <class name="com.smallcaseapi.GetWatchlistAPI"/>
+            <class name="com.smallcaseapi.RemoveWatchlist"/>
+            <class name="com.smallcaseapi.GetUser"/>
+            <class name="com.smallcaseapi.InvestmentInsightAPI"/>
+            <class name="com.smallcaseapi.NotificationAPI"/>
+            <class name="com.smallcaseapi.OfferAPI"/>
+            <class name="com.smallcaseapi.PriceandChangeAPI"/>
+            <class name="com.smallcaseapi.FundsAPI"/>
+            <class name="com.smallcaseapi.createsc.DraftSaveAPI"/>
+            <class name="com.smallcaseapi.createsc.GetDraftDetail"/>
+            <class name="com.smallcaseapi.createsc.GetDrafts"/>
+        </classes>
+    </test>
+
+    <test name="Test Runner for Kotak">
+        <parameter name="broker" value="kotak"/>
+        <classes>
+            <class name="com.smallcaseapi.DashboardAPI"/>
+            <class name="com.smallcaseapi.Highlighted"/>
+            <class name="com.smallcaseapi.DiscoverAPI"/>
+            <class name="com.smallcaseapi.Search"/>
+            <class name="com.smallcaseapi.CollectionAPI"/>
+            <class name="com.smallcaseapi.GetCollection"/>
+            <class name="com.smallcaseapi.CheckStatusAPI"/>
+            <class name="com.smallcaseapi.BlogProxyAPI"/>
+            <class name="com.smallcaseapi.AddToWatchlistAPI"/>
+            <class name="com.smallcaseapi.GetWatchlistAPI"/>
+            <class name="com.smallcaseapi.RemoveWatchlist"/>
+            <class name="com.smallcaseapi.GetUser"/>
+            <class name="com.smallcaseapi.InvestmentInsightAPI"/>
+            <class name="com.smallcaseapi.NotificationAPI"/>
+            <class name="com.smallcaseapi.OfferAPI"/>
+            <class name="com.smallcaseapi.PriceandChangeAPI"/>
+            <class name="com.smallcaseapi.FundsAPI"/>
+            <class name="com.smallcaseapi.createsc.DraftSaveAPI"/>
+            <class name="com.smallcaseapi.createsc.GetDraftDetail"/>
+            <class name="com.smallcaseapi.createsc.GetDrafts"/>
+        </classes>
+    </test>
+
+    <test name="Test Runner for TrustLine">
+        <parameter name="broker" value="trustline"/>
+        <classes>
+            <class name="com.smallcaseapi.DashboardAPI"/>
+            <class name="com.smallcaseapi.Highlighted"/>
+            <class name="com.smallcaseapi.DiscoverAPI"/>
+            <class name="com.smallcaseapi.Search"/>
+            <class name="com.smallcaseapi.CollectionAPI"/>
+            <class name="com.smallcaseapi.GetCollection"/>
+            <class name="com.smallcaseapi.CheckStatusAPI"/>
+            <class name="com.smallcaseapi.BlogProxyAPI"/>
+            <class name="com.smallcaseapi.AddToWatchlistAPI"/>
+            <class name="com.smallcaseapi.GetWatchlistAPI"/>
+            <class name="com.smallcaseapi.RemoveWatchlist"/>
+            <class name="com.smallcaseapi.GetUser"/>
+            <class name="com.smallcaseapi.InvestmentInsightAPI"/>
+            <class name="com.smallcaseapi.NotificationAPI"/>
+            <class name="com.smallcaseapi.OfferAPI"/>
+            <class name="com.smallcaseapi.PriceandChangeAPI"/>
+            <class name="com.smallcaseapi.FundsAPI"/>
+            <class name="com.smallcaseapi.createsc.DraftSaveAPI"/>
+            <class name="com.smallcaseapi.createsc.GetDraftDetail"/>
+            <class name="com.smallcaseapi.createsc.GetDrafts"/>
+        </classes>
+    </test>
+</suite>

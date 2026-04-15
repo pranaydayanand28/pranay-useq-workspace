@@ -1,0 +1,441 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "$ref": "#/definitions/Welcome9",
+  "definitions": {
+    "Welcome9": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "success": {
+          "type": "boolean"
+        },
+        "errors": {
+          "type": "array",
+          "items": {}
+        },
+        "data": {
+          "$ref": "#/definitions/Data"
+        }
+      },
+      "required": [
+        "data",
+        "errors",
+        "success"
+      ],
+      "title": "Welcome9"
+    },
+    "Data": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "_id": {
+          "type": "string"
+        },
+        "info": {
+          "$ref": "#/definitions/Info"
+        },
+        "flags": {
+          "$ref": "#/definitions/Flags"
+        },
+        "stats": {
+          "$ref": "#/definitions/Stats"
+        },
+        "source": {
+          "type": "string"
+        },
+        "constituents": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Constituent"
+          }
+        },
+        "segments": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Segment"
+          }
+        },
+        "compositionScheme": {
+          "type": "string"
+        },
+        "did": {
+          "type": "string"
+        },
+        "scid": {
+          "type": "string"
+        },
+        "similarSmallcases": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SimilarSmallcase"
+          }
+        },
+        "shared": {
+          "type": "boolean"
+        },
+        "allowShare": {
+          "type": "boolean"
+        },
+        "date": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "_id",
+        "compositionScheme",
+        "constituents",
+        "date",
+        "flags",
+        "info",
+        "scid",
+        "segments",
+        "shared",
+        "source"
+      ],
+      "title": "Data"
+    },
+    "Constituent": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "locked": {
+          "type": "boolean"
+        },
+        "sid": {
+          "type": "string"
+        },
+        "shares": {
+          "type": "number"
+        },
+        "weight": {
+          "type": "number"
+        },
+        "sidInfo": {
+          "$ref": "#/definitions/SidInfo"
+        }
+      },
+      "required": [
+        "locked",
+        "shares",
+        "sid",
+        "sidInfo",
+        "weight"
+      ],
+      "title": "Constituent"
+    },
+    "SidInfo": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "sector": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "ticker": {
+          "type": "string"
+        },
+        "exchange": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "tradable": {
+          "type": "boolean"
+        },
+        "nseSeries": {
+          "type": "string"
+        },
+        "isin": {
+          "type": "string"
+        },
+        "type": {
+          "$ref": "#/definitions/Type"
+        }
+      },
+      "required": [
+        "description",
+        "exchange",
+        "isin",
+        "name",
+        "nseSeries",
+        "sector",
+        "ticker",
+        "tradable",
+        "type"
+      ],
+      "title": "SidInfo"
+    },
+    "Flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "invested": {
+          "type": "boolean"
+        },
+        "shared": {
+          "type": "boolean"
+        },
+        "deleted": {
+          "type": "boolean"
+        },
+        "preferredSipType": {
+          "type": "string"
+        },
+        "tracked": {
+          "type": "boolean"
+        }
+      },
+      "title": "Flags"
+    },
+    "Info": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "creator": {
+          "$ref": "#/definitions/Creator"
+        },
+        "name": {
+          "type": "string"
+        },
+        "shortDescription": {
+          "type": "string"
+        },
+        "dateUpdated": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "created": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "name",
+        "shortDescription"
+      ],
+      "title": "Info"
+    },
+    "Creator": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "userId": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "userId"
+      ],
+      "title": "Creator"
+    },
+    "Segment": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "constituents": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "label": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "constituents",
+        "label"
+      ],
+      "title": "Segment"
+    },
+    "SimilarSmallcase": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "matchingConstituents": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "matchingSectors": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "otherSectors": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "otherConstituents": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "scid": {
+          "type": "string"
+        },
+        "ret1y": {
+          "type": "number"
+        },
+        "cagr": {
+          "type": "number"
+        },
+        "risk": {
+          "type": "number"
+        },
+        "riskLabel": {
+          "$ref": "#/definitions/RiskLabel"
+        },
+        "name": {
+          "type": "string"
+        },
+        "overlapType": {
+          "$ref": "#/definitions/Type"
+        },
+        "overlap": {
+          "type": "number"
+        },
+        "featuredLabel": {
+          "type": "string"
+        },
+        "featuredDescription": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "cagr",
+        "featuredDescription",
+        "featuredLabel",
+        "matchingConstituents",
+        "matchingSectors",
+        "name",
+        "otherConstituents",
+        "otherSectors",
+        "overlap",
+        "overlapType",
+        "ret1y",
+        "risk",
+        "riskLabel",
+        "scid"
+      ],
+      "title": "SimilarSmallcase"
+    },
+    "Stats": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "initialValue": {
+          "type": "number"
+        },
+        "lastCloseIndex": {
+          "type": "number"
+        },
+        "ratios": {
+          "$ref": "#/definitions/Ratios"
+        },
+        "returns": {
+          "$ref": "#/definitions/Returns"
+        },
+        "indexValue": {
+          "type": "number"
+        },
+        "networth": {
+          "type": "number"
+        },
+        "minInvestAmount": {
+          "type": "number"
+        }
+      },
+      "title": "Stats"
+    },
+    "Ratios": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "pe": {
+          "type": "number"
+        },
+        "pb": {
+          "type": "number"
+        },
+        "divYield": {
+          "type": "number"
+        },
+        "risk": {
+          "type": "number"
+        },
+        "riskLabel": {
+          "$ref": "#/definitions/RiskLabel"
+        },
+        "largeCapPercentage": {
+          "type": "number"
+        },
+        "midCapPercentage": {
+          "type": "number"
+        },
+        "smallCapPercentage": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "divYield",
+        "largeCapPercentage",
+        "midCapPercentage",
+        "pb",
+        "pe",
+        "risk",
+        "riskLabel",
+        "smallCapPercentage"
+      ],
+      "title": "Ratios"
+    },
+    "Returns": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "cagr": {
+          "type": "number"
+        },
+        "cagrDuration": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "cagr",
+        "cagrDuration"
+      ],
+      "title": "Returns"
+    },
+    "Type": {
+      "type": "string",
+      "enum": [
+        "stock",
+        "sector",
+        "featured"
+      ],
+      "title": "Type"
+    },
+    "RiskLabel": {
+      "type": "string",
+      "enum": [
+        "moderate",
+        "high",
+        "low"
+      ],
+      "title": "RiskLabel"
+    }
+  }
+}

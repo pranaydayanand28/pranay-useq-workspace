@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<configuration>
+
+    <property name="LOG_PATH" value="./test-output/LogFiles/"/>
+    <property name="LOG_ARCHIVE" value="${LOG_PATH}/archive"/>
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{dd/MM/yyyy HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="FILE" class="ch.qos.logback.core.FileAppender">
+        <file>${LOG_PATH}logs.log</file>
+        <encoder>
+            <pattern>%d{dd/MM/yyyy HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="htmlAppender" class="ch.qos.logback.core.FileAppender">
+        <file>${LOG_PATH}logs.html</file>
+        <encoder class="ch.qos.logback.core.encoder.LayoutWrappingEncoder">
+            <layout class="ch.qos.logback.classic.html.HTMLLayout">
+                <pattern>%d{dd/MM/yyyy HH:mm:ss} %-5level %logger{36} - %msg%n</pattern>
+            </layout>
+        </encoder>
+    </appender>
+
+    <!--   <logger name="com.smallcaseapi" level="info" additivity="false">
+           <appender-ref ref="STDOUT" />
+           <appender-ref ref="FILE" />
+       </logger> -->
+
+    <root level="all">
+        <appender-ref ref="FILE"/>
+        <appender-ref ref="STDOUT"/>
+        <appender-ref ref="htmlAppender"/>
+    </root>
+
+</configuration>

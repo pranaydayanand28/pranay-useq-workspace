@@ -1,0 +1,268 @@
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "$ref": "#/definitions/Welcome3",
+    "definitions": {
+        "Welcome3": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "success": {
+                    "type": "boolean"
+                },
+                "errors": {
+                    "type": "array",
+                    "items": {}
+                },
+                "data": {
+                    "$ref": "#/definitions/Data"
+                }
+            },
+            "required": [
+                "data",
+                "errors",
+                "success"
+            ],
+            "title": "Welcome3"
+        },
+        "Data": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "_id": {
+                    "type": "string"
+                },
+                "draftSmallcases": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/DraftSmallcase"
+                    }
+                }
+            },
+            "required": [
+                "_id",
+                "draftSmallcases"
+            ],
+            "title": "Data"
+        },
+        "DraftSmallcase": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "_id": {
+                    "type": "string"
+                },
+                "info": {
+                    "$ref": "#/definitions/Info"
+                },
+                "flags": {
+                    "$ref": "#/definitions/Flags"
+                },
+                "stats": {
+                    "$ref": "#/definitions/Stats"
+                },
+                "source": {
+                    "type": "string"
+                },
+                "constituents": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Constituent"
+                    }
+                },
+                "segments": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Segment"
+                    }
+                },
+                "compositionScheme": {
+                    "type": "string"
+                },
+                "did": {
+                    "type": "string"
+                },
+                "scid": {
+                    "type": "string"
+                },
+                "shared": {
+                    "type": "boolean"
+                },
+                "allowShare": {
+                    "type": "boolean"
+                },
+                "date": {
+                    "type": "string",
+                    "format": "date-time"
+                }
+            },
+            "required": [
+                "_id",
+                "compositionScheme",
+                "constituents",
+                "date",
+                "flags",
+                "info",
+                "scid",
+                "segments",
+                "shared",
+                "source",
+                "stats"
+            ],
+            "title": "DraftSmallcase"
+        },
+        "Constituent": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "locked": {
+                    "type": "boolean"
+                },
+                "sid": {
+                    "type": "string"
+                },
+                "shares": {
+                    "type": "number"
+                },
+                "weight": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "locked",
+                "shares",
+                "sid",
+                "weight"
+            ],
+            "title": "Constituent"
+        },
+        "Flags": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "invested": {
+                    "type": "boolean"
+                },
+                "shared": {
+                    "type": "boolean"
+                },
+                "deleted": {
+                    "type": "boolean"
+                },
+                "preferredSipType": {
+                    "type": "string"
+                }
+            },
+            "title": "Flags"
+        },
+        "Info": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "creator": {
+                    "$ref": "#/definitions/Creator"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "shortDescription": {
+                    "type": "string"
+                },
+                "dateUpdated": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "created": {
+                    "type": "string",
+                    "format": "date-time"
+                }
+            },
+            "required": [
+                "name",
+                "shortDescription"
+            ],
+            "title": "Info"
+        },
+        "Creator": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "userId": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "name",
+                "userId"
+            ],
+            "title": "Creator"
+        },
+        "Segment": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "constituents": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "label": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "constituents",
+                "label"
+            ],
+            "title": "Segment"
+        },
+        "Stats": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "initialValue": {
+                    "type": "number"
+                },
+                "lastCloseIndex": {
+                    "type": "number"
+                },
+                "networth": {
+                    "type": "number"
+                },
+                "indexValue": {
+                    "type": "number"
+                },
+                "riskLabel": {
+                    "type": "string"
+                },
+                "minInvestAmount": {
+                    "type": "number"
+                },
+                "returns": {
+                    "$ref": "#/definitions/Returns"
+                }
+            },
+            "title": "Stats"
+        },
+        "Returns": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "cagr": {
+                    "type": "number"
+                },
+                "cagrDuration": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "cagr",
+                "cagrDuration"
+            ],
+            "title": "Returns"
+        }
+    }
+}

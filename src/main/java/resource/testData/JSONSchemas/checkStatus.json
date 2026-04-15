@@ -1,0 +1,147 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "$ref": "#/definitions/Welcome10",
+  "definitions": {
+    "Welcome10": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "success": {
+          "type": "boolean"
+        },
+        "errors": {
+          "type": "null"
+        },
+        "data": {
+          "$ref": "#/definitions/Data"
+        }
+      },
+      "required": [
+        "data",
+        "errors",
+        "success"
+      ],
+      "title": "Welcome10"
+    },
+    "Data": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "broker": {
+          "type": "string"
+        },
+        "marketOpen": {
+          "type": "boolean"
+        },
+        "amoActive": {
+          "type": "boolean"
+        },
+        "cancelAmoActive": {
+          "type": "boolean"
+        },
+        "activeDays": {
+          "$ref": "#/definitions/ActiveDays"
+        },
+        "marketHours": {
+          "$ref": "#/definitions/MarketHours"
+        },
+        "marketClosedText": {
+          "type": "string"
+        },
+        "currentTime": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "nextAmoWindow": {
+          "$ref": "#/definitions/NextAmoWindow"
+        }
+      },
+      "required": [
+        "activeDays",
+        "amoActive",
+        "broker",
+        "cancelAmoActive",
+        "currentTime",
+        "marketHours",
+        "marketOpen"
+      ],
+      "title": "Data"
+    },
+    "ActiveDays": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "isWorkingDay": {
+          "type": "boolean"
+        },
+        "nextActiveDay": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "previousActiveDay": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "isWorkingDay",
+        "nextActiveDay",
+        "previousActiveDay"
+      ],
+      "title": "ActiveDays"
+    },
+    "MarketHours": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "start": {
+          "type": "number"
+        },
+        "end": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "end",
+        "start"
+      ],
+      "title": "MarketHours"
+    },
+    "NextAmoWindow": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "place": {
+          "$ref": "#/definitions/Cancel"
+        },
+        "cancel": {
+          "$ref": "#/definitions/Cancel"
+        }
+      },
+      "required": [
+        "cancel",
+        "place"
+      ],
+      "title": "NextAmoWindow"
+    },
+    "Cancel": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "start": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "end": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "end",
+        "start"
+      ],
+      "title": "Cancel"
+    }
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "GetCollectionResponse",
+  "type": "object",
+  "properties": {
+    "success": { "type": "boolean" },
+    "errors": {
+      "oneOf": [
+        { "type": "null" },
+        {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      ]
+    },
+    "data": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "_id": { "type": "string" },
+          "scid": { "type": "string" },
+
+          "info": {
+            "type": "object",
+            "additionalProperties": true
+          },
+
+          "stats": {
+            "type": "object",
+            "additionalProperties": true
+          },
+
+          "flags": {
+            "type": "object",
+            "additionalProperties": true
+          },
+
+          "platformData": {
+            "type": "object",
+            "additionalProperties": true
+          },
+
+          "investmentInsight": {
+            "type": "object",
+            "additionalProperties": true
+          },
+
+          "assetUniverse": { "type": ["string", "null"] },
+
+          "brokerMeta": {
+            "type": "array",
+            "items": { "type": "object", "additionalProperties": true }
+          },
+
+          "distributorMeta": {
+            "type": "array",
+            "items": { "type": "object", "additionalProperties": true }
+          },
+
+          "trigger": {
+            "type": "object",
+            "additionalProperties": true
+          }
+        },
+        "required": ["scid"],
+        "additionalProperties": true
+      }
+    }
+  },
+  "required": ["success", "data"],
+  "additionalProperties": true
+}

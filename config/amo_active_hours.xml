@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="AMO Active Hours Test Suite" parallel="false">
+
+    <listeners>
+        <listener class-name="resource.resource.ListenerClass"/>
+    </listeners>
+
+    <test name="AMO Active Hours API Tests">
+        <classes>
+            <class name="com.integration.AmoActiveHoursAPI"/>
+        </classes>
+    </test>
+
+</suite>

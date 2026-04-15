@@ -1,0 +1,69 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "additionalProperties": true,
+  "properties": {
+    "success": { "type": "boolean" },
+    "errors": {
+      "type": "array",
+      "items": {}
+    },
+    "data": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "_id": { "type": "string" },
+          "name": { "type": "string" },
+          "rank": { "type": ["string", "number"] },
+          "description": { "type": "string" },
+          "type": { "type": "string" },
+          "cid": { "type": "string" },
+          "slug": { "type": "string" },
+          "groups": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true,
+              "properties": {
+                "label": { "type": "string" },
+                "sortOrder": { "type": ["number", "string"] },
+                "type": { "type": "string" },
+                "sortField": { "type": "string" },
+                "smallcases": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": true,
+                    "properties": {
+                      "scid": { "type": "string" },
+                      "info": {
+                        "type": "object",
+                        "additionalProperties": true
+                      },
+                      "stats": {
+                        "type": "object",
+                        "additionalProperties": true
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "smallcases": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "smallcaseCount": { "type": ["number", "string"] },
+          "publisher": { "type": "string" }
+        }
+      }
+    }
+  },
+  "required": ["success", "errors", "data"]
+}

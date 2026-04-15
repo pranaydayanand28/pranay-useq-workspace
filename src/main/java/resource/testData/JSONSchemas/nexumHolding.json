@@ -1,0 +1,45 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "success": {
+      "type": "boolean"
+    },
+    "errors": {
+      "type": "null"
+    },
+    "data": {
+      "type": "object",
+      "properties": {
+        "pledgedHoldings": {
+          "type": "array",
+          "items": [
+            {
+              "type": "object",
+              "properties": {
+                "scripName": {
+                  "type": "string"
+                },
+                "creditLimit": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "scripName",
+                "creditLimit"
+              ]
+            }
+          ]
+        }
+      },
+      "required": [
+        "pledgedHoldings"
+      ]
+    }
+  },
+  "required": [
+    "success",
+    "errors",
+    "data"
+  ]
+}

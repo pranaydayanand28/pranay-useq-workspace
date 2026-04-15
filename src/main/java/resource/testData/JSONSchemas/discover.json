@@ -1,0 +1,68 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "data": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "scid": { "type": "string" },
+          "info": {
+            "type": "object",
+            "properties": {
+              "name": { "type": "string" },
+              "creator": { "type": "string" },
+              "owner": {
+                "type": "object",
+                "properties": {
+                  "userId": { "type": "string" }
+                },
+                "required": ["userId"],
+                "additionalProperties": true
+              }
+            },
+            "required": ["name", "creator"],
+            "additionalProperties": true
+          },
+          "flags": {
+            "type": "object",
+            "properties": {
+              "active": { "type": "boolean" },
+              "locked": { "type": "boolean" }
+            },
+            "required": ["active", "locked"],
+            "additionalProperties": true
+          },
+          "stats": {
+            "type": "object",
+            "properties": {
+              "minInvestAmount": { "type": "number" },
+              "indexValue": { "type": "number" }
+            },
+            "required": ["minInvestAmount", "indexValue"],
+            "additionalProperties": true
+          },
+          "platformData": {
+            "type": "object",
+            "properties": {
+              "ratios": {
+                "type": "object",
+                "properties": {
+                  "cagr": { "type": "number" }
+                },
+                "required": ["cagr"],
+                "additionalProperties": true
+              }
+            },
+            "additionalProperties": true
+          }
+        },
+        "required": ["scid", "info", "flags", "stats"],
+        "additionalProperties": true
+      }
+    }
+  },
+  "required": ["data"],
+  "additionalProperties": true
+}

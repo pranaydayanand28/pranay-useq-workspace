@@ -1,0 +1,59 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "$ref": "#/definitions/Welcome6",
+  "definitions": {
+    "Welcome6": {
+      "type": "object",
+      "properties": {
+        "success": {
+          "type": "boolean"
+        },
+        "errors": {
+          "type": "null"
+        },
+        "data": {
+          "$ref": "#/definitions/Data"
+        }
+      },
+      "required": [
+        "data",
+        "errors",
+        "success"
+      ],
+      "title": "Welcome6"
+    },
+    "Data": {
+      "type": "object",
+      "properties": {
+        "jwt_trd": {
+          "type": "string"
+        },
+        "flags": {
+          "$ref": "#/definitions/Flags"
+        },
+        "x-csrf-token": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "flags",
+        "jwt_trd",
+        "x-csrf-token"
+      ],
+      "title": "Data"
+    },
+    "Flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "signup": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "signup"
+      ],
+      "title": "Flags"
+    }
+  }
+}

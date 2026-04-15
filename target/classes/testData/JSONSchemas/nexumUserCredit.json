@@ -1,0 +1,61 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "success": {
+      "type": "boolean"
+    },
+    "errors": {
+      "type": "null"
+    },
+    "data": {
+      "type": "object",
+      "properties": {
+        "creditLimit": {
+          "type": "integer"
+        },
+        "mutualFunds": {
+          "type": "array",
+          "items": [
+            {
+              "type": "object",
+              "properties": {
+                "isin": {
+                  "type": "string"
+                },
+                "units": {
+                  "type": "number"
+                },
+                "isEligible": {
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "isin",
+                "units",
+                "isEligible"
+              ]
+            }
+          ]
+        },
+        "calculatedDate": {
+          "type": "string"
+        },
+        "creditLimitThreshold": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "creditLimit",
+        "mutualFunds",
+        "calculatedDate",
+        "creditLimitThreshold"
+      ]
+    }
+  },
+  "required": [
+    "success",
+    "errors",
+    "data"
+  ]
+}

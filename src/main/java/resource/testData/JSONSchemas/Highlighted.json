@@ -1,0 +1,60 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "additionalProperties": true,
+  "properties": {
+    "success": {
+      "type": "boolean"
+    },
+    "errors": {
+      "type": "array"
+    },
+    "data": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "_id": { "type": "string" },
+          "scid": { "type": "string" },
+          "info": {
+            "type": "object",
+            "additionalProperties": true,
+            "properties": {
+              "name": { "type": "string" },
+              "type": { "type": "string" },
+              "shortDescription": { "type": "string" },
+              "publisher": { "type": "string" },
+              "publisherName": { "type": "string" },
+              "investmentHorizon": { "type": "string" },
+              "slug": { "type": "string" },
+              "micrositeUrl": { "type": "string" }
+            }
+          },
+          "stats": {
+            "type": "object",
+            "additionalProperties": true,
+            "properties": {
+              "returns": { "type": "object", "additionalProperties": true },
+              "ratios": { "type": "object", "additionalProperties": true },
+              "minInvestAmount": { "type": ["number", "integer"] },
+              "minSipAmount": { "type": ["number", "integer"] },
+              "investorCount": { "type": ["number", "integer"] },
+              "subscriberCount": { "type": ["number", "integer"] }
+            }
+          },
+          "flags": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "platformData": {
+            "type": "object",
+            "additionalProperties": true
+          }
+        },
+        "required": ["info", "stats"]
+      }
+    }
+  },
+  "required": ["success", "errors", "data"]
+}

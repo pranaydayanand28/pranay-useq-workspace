@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="IndianEquityIntegrationAPISuite">
+    <listeners>
+        <listener class-name="resource.resource.ListenerClass"/>
+    </listeners>
+
+    <test name="Test Runner to Broker User Session">
+        <parameter name="segment" value="equity" />
+        <parameter name="ipAddress" value="127.0.0.1" />
+        <parameter name="brokerFunctionLogId" value="541c14e7-a63f-470c-89ea-3a17ab584bdb" />
+        <classes>
+            <class name="com.integration.CheckSessionAPI"/>
+        </classes>
+    </test>
+
+</suite>

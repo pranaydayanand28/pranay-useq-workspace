@@ -1,0 +1,442 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extentreports>
+    <configuration>
+        <!-- report theme -->
+        <theme>dark</theme>
+        <!-- document encoding -->
+        <encoding>UTF-8</encoding>
+        <!-- protocol for script and stylesheets -->
+        <protocol>https</protocol>
+        <!-- title of the document -->
+        <documentTitle>API Framework</documentTitle>
+        <!-- report name - displayed at top-nav -->
+        <reportName>SC API Automation Report</reportName>
+        <!-- location of charts in the test view -->
+        <testViewChartLocation>bottom</testViewChartLocation>
+        <!-- custom javascript -->
+        <scripts>
+            <![CDATA[
+
+        (function() {
+            var faScript = document.createElement('script');
+            faScript.src = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js';
+            faScript.defer = true;
+            document.head.appendChild(faScript);
+        })();
+
+        function copyToClipboard(button) {
+            var container = button.closest('.requestResponseDiv-container');
+            if (container) {
+                var editor = ace.edit(container.querySelector('.requestResponseDiv'));
+                var content = editor.getValue();
+                navigator.clipboard.writeText(content).then(function() {
+                    var notification = document.createElement('div');
+                    notification.textContent = 'Content copied to clipboard';
+                    notification.classList.add('copy-notification');
+                    document.body.appendChild(notification);
+                    setTimeout(function() {
+                        notification.style.opacity = '0';
+                        setTimeout(function() {
+                            document.body.removeChild(notification);
+                        }, 1000);
+                    }, 2000);
+                    button.blur();
+                }).catch(function(err) {
+                    console.error('Error copying content: ', err);
+                });
+            }
+        }
+
+        function initializeAceEditor(node) {
+            var requestResponseDivs = node.querySelectorAll('.requestResponseDiv');
+            requestResponseDivs.forEach(function(div) {
+                var jsonContent = div.querySelector('pre').innerText.trim();
+                var contentType = div.getAttribute('data-type');
+                let editor = ace.edit(div);
+                editor.setTheme('ace/theme/tomorrow_night');
+                editor.getSession().setUseWorker(false);
+                editor.setOptions({
+                    maxLines: 25,
+                    readOnly: true,
+                    fontSize: '14px',
+                    scrollPastEnd: 0.5,
+                    autoScrollEditorIntoView: true
+                });
+                if (contentType === 'json') {
+                    try {
+                        var parsedJson = JSON.parse(jsonContent);
+                        editor.getSession().setMode('ace/mode/json');
+                        editor.setValue(JSON.stringify(parsedJson, null, 4));
+                    } catch (error) {
+                        console.error('Error parsing JSON:', error, 'Content:', jsonContent);
+                        editor.setValue(jsonContent);
+                    }
+                } else {
+                    editor.setValue(jsonContent);
+                }
+                editor.gotoLine(1);
+            });
+        }
+
+        function setupMutationObserver() {
+            var observer = new MutationObserver(function(mutations) {
+                mutations.forEach(function(mutation) {
+                    if (mutation.addedNodes.length > 0) {
+                        mutation.addedNodes.forEach(function(node) {
+                            if (node.classList && node.classList.contains('test-body')) {
+                                initializeAceEditor(node);
+                            }
+                        });
+                    }
+                });
+            });
+
+            var detailsContainer = document.querySelector('.details-container');
+            if (detailsContainer) {
+                observer.observe(detailsContainer, { childList: true, subtree: true });
+            } else {
+                console.error('Details container not found!');
+            }
+        }
+
+        var aceScript = document.createElement('script');
+        aceScript.src = 'https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ace.js';
+        aceScript.onload = function() {
+            initializeAceEditorForExisting();
+            setupMutationObserver();
+        };
+        aceScript.onerror = function(error) {
+            console.error('Error loading Ace Editor:', error);
+        };
+        document.body.appendChild(aceScript);
+
+        function initializeAceEditorForExisting() {
+            var existingTestBodies = document.querySelectorAll('.details-container .test-body');
+            existingTestBodies.forEach(function(body) {
+                initializeAceEditor(body);
+            });
+        }
+
+        (function() {
+            const faviconUrl = "https://www.smallcase.com/static/favicon/favicon.ico";
+            const link = document.createElement("link");
+            link.rel = "icon";
+            link.type = "image/x-icon";
+            link.href = faviconUrl;
+            function checkFavicon(url, callback) {
+                const img = new Image();
+                img.onload = function() {
+                    callback(true);
+                };
+                img.onerror = function() {
+                    callback(false);
+                };
+                img.src = url;
+            }
+            checkFavicon(faviconUrl, function(exists) {
+                if (exists) {
+                    document.head.appendChild(link);
+                } else {
+                    console.log("Favicon not found:", faviconUrl);
+                }
+            });
+        })();
+
+        (function() {
+        const logoContent = document.querySelector('.logo-content');
+        const logoImage = document.createElement('img');
+        logoImage.alt = 'Smallcase Logo';
+        function updateLogo() {
+            if (window.innerWidth <= 992) {
+                logoImage.src = 'https://www.smallcase.com/static/svgs/logo-mark.svg';
+                logoImage.style.width = '25px';
+                logoImage.style.height = 'auto';
+                logoImage.style.marginLeft = '60px';
+                logoImage.style.marginTop = '10px';
+            } else {
+                logoImage.src = 'https://www.smallcase.com/static/svgs/logo-full.svg';
+                logoImage.style.width = '100px';
+                logoImage.style.height = 'auto';
+                logoImage.style.marginLeft = '20px';
+                logoImage.style.marginTop = '12px';
+            }
+            logoContent.href = 'https://www.smallcase.com';
+            logoContent.target = '_blank';
+            logoContent.innerHTML = '';
+            logoContent.appendChild(logoImage);
+        }
+        updateLogo();
+        window.addEventListener('resize', updateLogo);
+        const logoContainer = document.querySelector('.logo-container');
+        logoContainer.classList.remove('blue', 'darken-2');
+
+		const buttonCollapse = document.querySelector('.button-collapse');
+		const sideNav = document.querySelector('.side-nav');
+
+		if (sideNav && logoContainer && buttonCollapse) {
+			logoContainer.insertBefore(buttonCollapse, logoContainer.firstChild);
+			sideNav.parentNode.insertBefore(logoContainer, sideNav.nextSibling);
+			const navContainer = document.querySelector('nav');
+			navContainer.style.display = 'flex';
+			navContainer.style.alignItems = 'center';
+			buttonCollapse.style.marginLeft = '3px';
+		}
+		const navRight = document.querySelector('.nav-right');
+        if (navRight) {
+            navRight.style.marginLeft = 'auto';
+        }
+        })();
+
+    (function() {
+        const categoriesDivs = document.querySelectorAll('.test-attributes .categories');
+        categoriesDivs.forEach(categoriesDiv => {
+            const spans = categoriesDiv.querySelectorAll('.category');
+            const uniqueTexts = new Set();
+            spans.forEach(span => {
+                const text = span.textContent;
+                if (uniqueTexts.has(text)) {
+                    span.remove();
+                } else {
+                    uniqueTexts.add(text);
+                }
+            });
+        });
+        })();
+
+    (function() {
+        const adjustVisibilityAndLayout = () => {
+            const isLessThan750px = window.innerWidth <= 750;
+            document.querySelectorAll('th, td.timestamp').forEach(el => {
+                if (el.textContent.trim() === 'Timestamp' || el.classList.contains('timestamp')) {
+                    el.style.display = isLessThan750px ? 'none' : '';
+                }
+            });
+            document.querySelectorAll('.button-responsive').forEach(el => {
+                el.style.display = isLessThan750px ? 'none' : 'block';
+            });
+            document.querySelectorAll('.test-head').forEach(head => {
+                head.style.display = 'flex';
+                head.style.justifyContent = 'space-between';
+                head.style.alignItems = 'center';
+                head.style.flexWrap = isLessThan750px ? 'wrap' : 'nowrap';
+                const status = head.querySelector('.test-status');
+                if (status) {
+                    status.style.setProperty('margin-top', '5px', 'important');
+                }
+            });
+        };
+        window.addEventListener('resize', adjustVisibilityAndLayout);
+        adjustVisibilityAndLayout();
+        })();
+
+        function toggleContent(button) {
+            var container = button.closest('.requestResponseDiv-container');
+            if (container) {
+                var aceCodeContainer = container.querySelector('.aceCodeContainer');
+                if (aceCodeContainer) {
+                    if (aceCodeContainer.style.display === 'none') {
+                        aceCodeContainer.style.display = 'block';
+                        button.firstChild.innerHTML = '<pre>&#x1F53C;<div class="button-responsive"> Collapse</div></pre>';
+                    } else {
+                        aceCodeContainer.style.display = 'none';
+                        button.firstChild.innerHTML = '<pre>&#x1F53D;<div class="button-responsive"> Expand</div></pre>';
+                    }
+                }
+            }
+            button.blur();
+        }
+
+        function maximizeScreen(button) {
+            let aceCodeContainer, container;
+            button.blur();
+            const closestDropdownButton = button.parentNode.querySelector('.dropdown-button');
+            if (closestDropdownButton) {
+                const responsiveDiv = closestDropdownButton.querySelector('.button-responsive');
+                if (responsiveDiv && responsiveDiv.textContent.trim() === "Expand") {
+                    closestDropdownButton.click();
+                }
+            }
+
+            function addCloseIcon(aceCodeContainer) {
+                const closeIcon = document.createElement('div');
+                closeIcon.className = 'close-icon';
+                closeIcon.innerHTML = `
+                <button class="maximize-button">
+                    <span>
+                        <pre>
+                            <i class="fas fa-expand"></i>
+                            <div class="button-responsive" style="display: block;"> Minimize</div>
+                        </pre>
+                    </span>
+                </button>`;
+                closeIcon.onclick = function() {
+                    toggleFullScreen(aceCodeContainer);
+                };
+                aceCodeContainer.appendChild(closeIcon);
+            }
+
+            function removeCloseIcon(aceCodeContainer) {
+                const closeIcon = aceCodeContainer.querySelector('.close-icon');
+                if (closeIcon) closeIcon.remove();
+            }
+
+            function requestFullScreen(element) {
+                if (element.requestFullscreen) element.requestFullscreen();
+                else if (element.mozRequestFullScreen) element.mozRequestFullScreen();
+                else if (element.webkitRequestFullscreen) element.webkitRequestFullscreen();
+                else if (element.msRequestFullscreen) element.msRequestFullscreen();
+                element.classList.add('fullscreen-mode');
+            }
+
+            function exitFullScreen() {
+                if (document.exitFullscreen) document.exitFullscreen();
+                else if (document.mozCancelFullScreen) document.mozCancelFullScreen();
+                else if (document.webkitExitFullscreen) document.webkitExitFullscreen();
+                else if (document.msExitFullscreen) document.msExitFullscreen();
+            }
+
+            function toggleFullScreen(aceCodeContainer) {
+                const editor = ace.edit(aceCodeContainer.querySelector('.requestResponseDiv'));
+                if (aceCodeContainer.classList.contains('maximized')) {
+                    aceCodeContainer.classList.remove('maximized');
+                    editor.setOptions({
+                        maxLines: 25
+                    });
+                    removeCloseIcon(aceCodeContainer);
+                    exitFullScreen();
+                } else {
+                    aceCodeContainer.classList.add('maximized');
+                    editor.setOptions({
+                        maxLines: Infinity
+                    });
+                    addCloseIcon(aceCodeContainer);
+                    requestFullScreen(aceCodeContainer);
+                }
+                editor.resize();
+            }
+
+            container = button.closest('.requestResponseDiv-container');
+            if (container) {
+                aceCodeContainer = container.querySelector('.aceCodeContainer');
+                toggleFullScreen(aceCodeContainer);
+            }
+
+
+            document.addEventListener('fullscreenchange', handleFullScreenChange);
+            document.addEventListener('mozfullscreenchange', handleFullScreenChange);
+            document.addEventListener('webkitfullscreenchange', handleFullScreenChange);
+            document.addEventListener('msfullscreenchange', handleFullScreenChange);
+
+
+            function handleFullScreenChange() {
+                if (!document.fullscreenElement) {
+                    const fullscreenElement = document.querySelector('.fullscreen-mode');
+                    if (fullscreenElement) fullscreenElement.classList.remove('fullscreen-mode');
+                    if (aceCodeContainer) {
+                        aceCodeContainer.classList.remove('maximized');
+                        const editor = ace.edit(aceCodeContainer.querySelector('.requestResponseDiv'));
+                        editor.setOptions({
+                            maxLines: 25
+                        });
+                        editor.resize();
+                        removeCloseIcon(aceCodeContainer);
+                    }
+
+                    if (closestDropdownButton) {
+                        const responsiveDiv = closestDropdownButton.querySelector('.button-responsive');
+                        if (responsiveDiv) {
+                            toggleContent(closestDropdownButton);
+                        }
+                    }
+
+                    document.removeEventListener('fullscreenchange', handleFullScreenChange);
+                    document.removeEventListener('mozfullscreenchange', handleFullScreenChange);
+                    document.removeEventListener('webkitfullscreenchange', handleFullScreenChange);
+                    document.removeEventListener('msfullscreenchange', handleFullScreenChange);
+
+                }
+            }
+        }
+
+    ]]>
+        </scripts>
+        <!-- custom styles -->
+        <styles>
+            <![CDATA[
+        .requestResponseDiv-container { position: relative; }
+        .dropdown-button, .copy-button, .maximize-button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 20px;
+        }
+        .dropdown-button:focus, .copy-button:focus, .maximize-button:focus {
+            outline: none;
+        }
+        .dropdown-button span, .copy-button span, .maximize-button span {
+            line-height: 1;
+        }
+        .aceCodeContainer {
+            margin-top: 10px;
+            display: none;
+        }
+        .copy-notification {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 10px;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            z-index: 9999;
+            transition: opacity 0.5s ease-in-out;
+        }
+        .dropdown-button, .copy-button, .maximize-button {
+            display: inline-flex;
+            align-items: center;
+        }
+        .dropdown-button span pre, .copy-button span pre, .maximize-button span pre {
+            display: inline-flex;
+            align-items: center;
+            margin: 0;
+        }
+        .button-container {
+            position: absolute;
+            top: -16px;
+            right: 0;
+            display: flex;
+            align-items: center;
+            z-index: 4;
+        }
+        .aceCodeContainer.maximized {
+            position: fixed;
+            top: -10px;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: 9999;
+            overflow: auto;
+        }
+        .close-icon {
+            position: fixed;
+            top: 0px;
+            right: 10px;
+            font-size: 24px;
+            cursor: pointer;
+            z-index: 10000;
+        }
+        .fullscreen-mode {
+            background-color: #1D1F21 !important;
+            width: 100%;
+            height: 100%;
+          }
+        @media (max-width: 750px) {
+            .button-responsive {
+                display: none;
+            }
+        }
+    ]]>
+        </styles>
+    </configuration>
+</extentreports>

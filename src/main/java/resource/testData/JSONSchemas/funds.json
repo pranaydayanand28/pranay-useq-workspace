@@ -1,0 +1,79 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "$ref": "#/definitions/Welcome2",
+  "definitions": {
+    "Welcome2": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "success": {
+          "type": "boolean"
+        },
+        "errors": {
+          "type": "null"
+        },
+        "data": {
+          "$ref": "#/definitions/Data"
+        }
+      },
+      "required": [
+        "data",
+        "errors",
+        "success"
+      ],
+      "title": "Welcome2"
+    },
+    "Data": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "code": {
+          "type": "boolean"
+        },
+        "reason": {
+          "type": "string"
+        },
+        "net": {
+          "type": "number"
+        },
+        "sufficientFunds": {
+          "type": "boolean"
+        },
+        "requiredFunds": {
+          "type": "number"
+        },
+        "allowedSellValues": {
+          "$ref": "#/definitions/AllowedSellValues"
+        },
+        "addFundsUrl": {
+          "type": "string",
+          "format": "uri",
+          "qt-uri-protocols": [
+            "https"
+          ]
+        }
+      },
+      "required": [
+        "requiredFunds",
+        "sufficientFunds"
+      ],
+      "title": "Data"
+    },
+    "AllowedSellValues": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "T0": {
+          "type": "number"
+        },
+        "T1": {
+          "type": "number"
+        },
+        "T2": {
+          "type": "number"
+        }
+      },
+      "title": "AllowedSellValues"
+    }
+  }
+}

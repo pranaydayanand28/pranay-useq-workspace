@@ -1,0 +1,520 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "$ref": "#/definitions/Welcome3",
+  "definitions": {
+    "Welcome3": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "success": {
+          "type": "boolean"
+        },
+        "errors": {
+          "type": "null"
+        },
+        "data": {
+          "$ref": "#/definitions/Data"
+        }
+      },
+      "required": [
+        "data",
+        "errors",
+        "success"
+      ],
+      "title": "Welcome3"
+    },
+    "Data": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "_id": {
+          "type": "string"
+        },
+        "broker": {
+          "$ref": "#/definitions/Broker"
+        },
+        "holdings": {
+          "$ref": "#/definitions/Holdings"
+        },
+        "actions": {
+          "$ref": "#/definitions/Actions"
+        },
+        "draftSmallcases": {
+          "type": "array",
+          "items": {}
+        },
+        "investedSmallcases": {
+          "type": "array",
+          "items": {}
+        },
+        "exitedSmallcases": {
+          "type": "array",
+          "items": {}
+        },
+        "smallcaseWatchlist": {
+          "type": "array",
+          "items": {}
+        },
+        "stats": {
+          "$ref": "#/definitions/Stats"
+        },
+        "meta": {
+          "$ref": "#/definitions/Meta"
+        },
+        "dealer": {
+          "$ref": "#/definitions/Dealer"
+        },
+        "flags": {
+          "$ref": "#/definitions/DataFlags"
+        },
+        "appSettings": {
+          "$ref": "#/definitions/AppSettings"
+        },
+        "accountValue": {
+          "$ref": "#/definitions/AccountValue"
+        },
+        "addFundsUrl": {
+          "type": "string",
+          "format": "uri"
+        },
+        "chatIdentificationSecret": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "_id",
+        "accountValue",
+        "actions",
+        "appSettings",
+        "broker",
+        "chatIdentificationSecret",
+        "dealer",
+        "draftSmallcases",
+        "exitedSmallcases",
+        "flags",
+        "holdings",
+        "investedSmallcases",
+        "meta",
+        "smallcaseWatchlist",
+        "stats"
+      ],
+      "title": "Data"
+    },
+    "AccountValue": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "brokerHoldings": {
+          "$ref": "#/definitions/BrokerHoldings"
+        }
+      },
+      "required": [
+        "brokerHoldings"
+      ],
+      "title": "AccountValue"
+    },
+    "BrokerHoldings": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "equityCount": {
+          "type": "integer"
+        },
+        "cash": {
+          "type": "integer"
+        },
+        "lastUpdated": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "cash",
+        "equityCount"
+      ],
+      "title": "BrokerHoldings"
+    },
+    "Actions": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "fix": {
+          "type": "array",
+          "items": {}
+        },
+        "rebalance": {
+          "type": "array",
+          "items": {}
+        },
+        "buy": {
+          "type": "array",
+          "items": {}
+        },
+        "sip": {
+          "type": "array",
+          "items": {}
+        },
+        "subscription": {
+          "type": "array",
+          "items": {}
+        }
+      },
+      "required": [
+        "buy",
+        "fix",
+        "rebalance",
+        "sip",
+        "subscription"
+      ],
+      "title": "Actions"
+    },
+    "AppSettings": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "flags": {
+          "$ref": "#/definitions/AppSettingsFlags"
+        }
+      },
+      "required": [
+        "flags"
+      ],
+      "title": "AppSettings"
+    },
+    "AppSettingsFlags": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "pnlUpdateNotification": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "pnlUpdateNotification"
+      ],
+      "title": "AppSettingsFlags"
+    },
+    "Broker": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "userId": {
+          "type": "string"
+        },
+        "secondaryField": {
+          "type": "string"
+        },
+        "userName": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "displayId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "userId"
+      ],
+      "title": "Broker"
+    },
+    "Dealer": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "signedUp": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "signedUp"
+      ],
+      "title": "Dealer"
+    },
+    "DataFlags": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "markers": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "boolean"
+          }
+        },
+        "onboarding": {
+          "$ref": "#/definitions/Onboarding"
+        },
+        "transactionNotifications": {
+          "type": "boolean"
+        },
+        "marketingNotifications": {
+          "type": "boolean"
+        },
+        "fullAppExperience": {
+          "type": "boolean"
+        },
+        "fullAppExperienceOverriden": {
+          "type": "boolean"
+        },
+        "internal": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "fullAppExperience",
+        "fullAppExperienceOverriden",
+        "internal",
+        "markers",
+        "marketingNotifications",
+        "onboarding",
+        "transactionNotifications"
+      ],
+      "title": "DataFlags"
+    },
+    "Onboarding": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "addWatchlist": {
+          "type": "boolean"
+        },
+        "invested": {
+          "type": "boolean"
+        },
+        "startSip": {
+          "type": "boolean"
+        },
+        "viewedSmallcase": {
+          "type": "boolean"
+        },
+        "viewedUnderstandSmallcase": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "addWatchlist",
+        "invested",
+        "startSip",
+        "viewedUnderstandSmallcase",
+        "viewedSmallcase"
+      ],
+      "title": "Onboarding"
+    },
+    "Holdings": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "returns": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "number"
+          }
+        },
+        "accruedReturns": {
+          "$ref": "#/definitions/EdReturns"
+        },
+        "creditedReturns": {
+          "$ref": "#/definitions/EdReturns"
+        }
+      },
+      "required": [
+        "accruedReturns",
+        "creditedReturns",
+        "returns"
+      ],
+      "title": "Holdings"
+    },
+    "EdReturns": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "LBES": {
+          "type": "integer"
+        },
+        "DSPL": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "DSPL",
+        "LBES"
+      ],
+      "title": "EdReturns"
+    },
+    "Meta": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "growth": {
+          "$ref": "#/definitions/Growth"
+        },
+        "profile": {
+          "$ref": "#/definitions/Profile"
+        },
+        "dna": {
+          "$ref": "#/definitions/Dna"
+        },
+        "optOuts": {
+          "$ref": "#/definitions/OptOuts"
+        },
+        "updatedProfile": {
+          "type": "boolean"
+        },
+        "dateCreated": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "bucketId": {
+          "type": "integer"
+        },
+        "acquisitionSource": {
+          "type": "string"
+        },
+        "deviceType": {
+          "type": "string"
+        },
+        "signupSource": {
+          "type": "string"
+        },
+        "utms": {
+          "$ref": "#/definitions/Utms"
+        },
+        "lastLoggedIn": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "lastTransacted": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "acquisitionSource",
+        "bucketId",
+        "dateCreated",
+        "deviceType",
+        "dna",
+        "growth",
+        "lastLoggedIn",
+        "optOuts",
+        "signupSource",
+        "updatedProfile",
+        "utms"
+      ],
+      "title": "Meta"
+    },
+    "Dna": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "consent": {
+          "$ref": "#/definitions/Consent"
+        }
+      },
+      "required": [
+        "consent"
+      ],
+      "title": "Dna"
+    },
+    "Consent": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "status"
+      ],
+      "title": "Consent"
+    },
+    "Growth": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "tags": {
+          "type": "array",
+          "items": {}
+        }
+      },
+      "required": [
+        "tags"
+      ],
+      "title": "Growth"
+    },
+    "OptOuts": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "email": {
+          "type": "array",
+          "items": {}
+        }
+      },
+      "required": [
+        "email"
+      ],
+      "title": "OptOuts"
+    },
+    "Profile": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "email": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        }
+      },
+      "title": "Profile"
+    },
+    "Utms": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "campaign": {
+          "type": "string"
+        },
+        "content": {
+          "type": "string"
+        },
+        "medium": {
+          "type": "string"
+        },
+        "source": {
+          "type": "string"
+        },
+        "term": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "campaign",
+        "content",
+        "medium",
+        "source",
+        "term"
+      ],
+      "title": "Utms"
+    },
+    "Stats": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "smallcaseStocksCount": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "smallcaseStocksCount"
+      ],
+      "title": "Stats"
+    }
+  }
+}

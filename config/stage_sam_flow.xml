@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="smallcase API Suite">
+    <listeners>
+        <listener class-name="resource.resource.ListenerClass"/>
+    </listeners>
+
+    <test name="Test Runner for  SSO login">
+        <parameter name="PhoneNo" value="${placehold}"/>
+        <parameter name="isInternalParam" value="true"/>
+        <parameter name="Flow" value="Email flow"/>
+        <classes>
+            <class name="com.smallcaseapi.samflow.SSOLogin"/>
+            <class name="com.smallcaseapi.samflow.EmailPhoneNoSamLogin"/>
+        </classes>
+    </test>
+
+    <test name="Test Runner for sam login">
+        <parameter name="PhoneNo" value="${placehold}"/>
+        <parameter name="isInternalParam" value="true"/>
+        <parameter name="Flow" value="New Sam Login"/>
+        <classes>
+            <class name="com.smallcaseapi.samflow.SamLogin"/>
+        </classes>
+    </test>
+
+    <test name="Test Runner for  Investment Score Flow">
+        <parameter name="PhoneNo" value="9739110154"/>
+        <parameter name="isInternalParam" value="false"/>
+        <parameter name="Flow" value="InvestmentScore"/>
+
+        <classes>
+            <class name="com.smallcaseapi.samflow.SamLogin"/>
+            <class name="com.smallcaseapi.samflow.investmentscore.GetScore"/>
+            <class name="com.smallcaseapi.samflow.investmentscore.PendingAction"/>
+            <class name="com.smallcaseapi.samflow.investmentscore.Breakdown"/>
+        </classes>
+    </test>
+
+    <test name="Test Runner for  lamf">
+
+        <parameter name="PhoneNo" value="7674974717"/>
+        <parameter name="isInternalParam" value="false"/>
+        <parameter name="Flow" value="lamf flow"/>
+        <classes>
+            <class name="com.smallcaseapi.samflow.SamLogin"/>
+            <class name="com.smallcaseapi.samflow.lamfflow.NexumLogin"/>
+            <class name="com.smallcaseapi.samflow.lamfflow.NexumUserStatus"/>
+            <class name="com.smallcaseapi.samflow.lamfflow.NexumUserCredit"/>
+            <class name="com.smallcaseapi.samflow.lamfflow.NexumHolding"/>
+            <class name="com.smallcaseapi.samflow.lamfflow.NexumLoanPdf"/>
+            <class name="com.smallcaseapi.samflow.lamfflow.NexumLoanSummary"/>
+        </classes>
+    </test>
+
+</suite>

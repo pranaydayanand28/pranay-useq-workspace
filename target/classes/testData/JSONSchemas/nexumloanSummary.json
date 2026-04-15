@@ -1,0 +1,303 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "success": {
+      "type": "boolean"
+    },
+    "errors": {
+      "type": "null"
+    },
+    "data": {
+      "type": "object",
+      "properties": {
+        "loanSummary": {
+          "type": "object",
+          "properties": {
+            "flow": {
+              "type": "object",
+              "properties": {
+                "repayCash": {
+                  "type": "boolean"
+                },
+                "withdrawCash": {
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "repayCash",
+                "withdrawCash"
+              ]
+            },
+            "summary": {
+              "type": "object",
+              "properties": {
+                "availableCash": {
+                  "type": "number"
+                },
+                "cashWithdrawn": {
+                  "type": "integer"
+                },
+                "countOfPledgedMFs": {
+                  "type": "integer"
+                },
+                "creditLimit": {
+                  "type": "integer"
+                },
+                "lender": {
+                  "type": "string"
+                },
+                "loanAccountNumber": {
+                  "type": "string"
+                },
+                "maxWithdrawalLimit": {
+                  "type": "number"
+                },
+                "minWithdrawalLimit": {
+                  "type": "integer"
+                },
+                "rateOfInterest": {
+                  "type": "number"
+                },
+                "sanctionedLimit": {
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "availableCash",
+                "cashWithdrawn",
+                "countOfPledgedMFs",
+                "creditLimit",
+                "lender",
+                "loanAccountNumber",
+                "maxWithdrawalLimit",
+                "minWithdrawalLimit",
+                "rateOfInterest",
+                "sanctionedLimit"
+              ]
+            },
+            "transaction": {
+              "type": "object",
+              "properties": {
+                "recent": {
+                  "type": "array",
+                  "items": [
+                    {
+                      "type": "object",
+                      "properties": {
+                        "amount": {
+                          "type": "integer"
+                        },
+                        "date": {
+                          "type": "string"
+                        },
+                        "description": {
+                          "type": "string"
+                        },
+                        "status": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "amount",
+                        "date",
+                        "description",
+                        "status"
+                      ]
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "amount": {
+                          "type": "integer"
+                        },
+                        "date": {
+                          "type": "string"
+                        },
+                        "description": {
+                          "type": "string"
+                        },
+                        "status": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "amount",
+                        "date",
+                        "description",
+                        "status"
+                      ]
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "amount": {
+                          "type": "integer"
+                        },
+                        "date": {
+                          "type": "string"
+                        },
+                        "description": {
+                          "type": "string"
+                        },
+                        "status": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "amount",
+                        "date",
+                        "description",
+                        "status"
+                      ]
+                    }
+                  ]
+                },
+                "upcoming": {
+                  "type": "object",
+                  "properties": {
+                    "amount": {
+                      "type": "integer"
+                    },
+                    "date": {
+                      "type": "string"
+                    },
+                    "description": {
+                      "type": "string"
+                    },
+                    "linkedBankDetails": {
+                      "type": "object",
+                      "properties": {
+                        "accountNumber": {
+                          "type": "string"
+                        },
+                        "bankName": {
+                          "type": "string"
+                        },
+                        "slug": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "accountNumber",
+                        "bankName",
+                        "slug"
+                      ]
+                    },
+                    "type": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "amount",
+                    "date",
+                    "description",
+                    "linkedBankDetails",
+                    "type"
+                  ]
+                }
+              },
+              "required": [
+                "recent",
+                "upcoming"
+              ]
+            },
+            "user": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "name"
+              ]
+            },
+            "warnings": {
+              "type": "object",
+              "properties": {
+                "bouncedInterest": {
+                  "type": "object",
+                  "properties": {
+                    "date": {
+                      "type": "string"
+                    },
+                    "detectionDate": {
+                      "type": "string"
+                    },
+                    "isActive": {
+                      "type": "boolean"
+                    }
+                  },
+                  "required": [
+                    "date",
+                    "detectionDate",
+                    "isActive"
+                  ]
+                },
+                "closureInProcess": {
+                  "type": "object",
+                  "properties": {
+                    "isActive": {
+                      "type": "boolean"
+                    }
+                  },
+                  "required": [
+                    "isActive"
+                  ]
+                },
+                "shortfall": {
+                  "type": "object",
+                  "properties": {
+                    "detectionDate": {
+                      "type": "string"
+                    },
+                    "isActive": {
+                      "type": "boolean"
+                    }
+                  },
+                  "required": [
+                    "detectionDate",
+                    "isActive"
+                  ]
+                },
+                "withdrawalInProcess": {
+                  "type": "object",
+                  "properties": {
+                    "isActive": {
+                      "type": "boolean"
+                    }
+                  },
+                  "required": [
+                    "isActive"
+                  ]
+                }
+              },
+              "required": [
+                "bouncedInterest",
+                "closureInProcess",
+                "shortfall",
+                "withdrawalInProcess"
+              ]
+            }
+          },
+          "required": [
+            "flow",
+            "summary",
+            "transaction",
+            "user",
+            "warnings"
+          ]
+        }
+      },
+      "required": [
+        "loanSummary"
+      ]
+    }
+  },
+  "required": [
+    "success",
+    "errors",
+    "data"
+  ]
+}
